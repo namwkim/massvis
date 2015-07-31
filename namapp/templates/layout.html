@@ -1,7 +1,7 @@
 {# _namapp/templates/layout.html_ #}
 <html ng-app="namApp">
 <head>
-	<title>Nam</title>
+	<title>MASSVIS - Massachusetts (Massive) Visualization Dataset</title>
 	<link rel="shortcut icon" href="/img/favicon.png">
 	<!-- bower components css -->
 	<link rel='stylesheet' href='/bower_components/semantic-ui/dist/semantic.min.css' />
@@ -9,7 +9,7 @@
 	<!-- bower components js -->
 	<script src="/bower_components/jquery/jquery.js"></script>
 	<script src="/bower_components/underscore/underscore.js"></script>
-	<script src="/bower_components/semantic-ui/dist/semantic.min.js"></script>
+	<!--<script src="/bower_components/semantic-ui/dist/semantic.min.js"></script>-->
 	<script src="/bower_components/angular/angular.js"></script>
 
 	<!--css -->
@@ -22,9 +22,33 @@
 	<script src="/js/ng/dist/service.js"></script>
 	<script src="/js/ng/dist/directive.js"></script>
 
+	<!-- Custom Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+	<!-- Plugin CSS -->
+	<link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/creative.css" type="text/css">
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.fittext.js"></script>
+	<script src="js/wow.min.js"></script>
+
+	<!-- Custom Theme JavaScript -->
+	<script src="js/creative.js"></script>
 
 </head>
-<body ng-controller="mainCtrl">
+<body id="page-top" ng-controller="mainCtrl">
 	{% block content %}{% endblock %}
 </body>
 </html>
