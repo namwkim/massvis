@@ -1,4 +1,4 @@
-Nam's Website Boilerplate using SemanticUI, Angularjs, and FlaskServer.
+MassVis Project Website
 -------
 
 Install
