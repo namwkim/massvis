@@ -15,7 +15,7 @@ grunt build
 grunt run
 ```
 - if you want to run as a demon, try 'nohup grunt run &'
-- Go to: localhost:3000.
+- Go to: localhost:3333.
 - Optional, but recommended way. see: [https://goo.gl/EaCMLJ])
 ```
 pip install virtualenv
