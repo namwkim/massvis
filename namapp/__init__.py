@@ -96,7 +96,7 @@ def download(filename):
     #diff
     timedelta = (currtime-prevtime)#/64/64
     app.logger.info(timedelta)
-    if timedelta.total_seconds()>(60*60*24):
+    if timedelta.days>1:
         if password in passwords:
             passwords.remove(password)
         app.logger.warning(password+" expired")
