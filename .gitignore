@@ -30,6 +30,7 @@ node_modules
 node_modules/
 namapp/static/bower_components/
 namapp/static/js/ng/dist/
+namapp/data/
 instance/
 *.out
 *.log

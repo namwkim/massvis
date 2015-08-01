@@ -473,3 +473,13 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #222;
 }
+
+#eyetracking{
+  width:100%;
+  background-image: url(../img/eyetracking.png);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}

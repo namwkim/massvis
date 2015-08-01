@@ -92,4 +92,5 @@ massvis.controller('mainCtrl', ['$scope',  function ($scope) {
 
     $scope.license="By checking this box, you agree to the following license agreement: Access to, and use of, the images, and annotations in this dataset are for research and educational uses only. No commercial use, reproduction or distribution of the images, or any modifications thereof, is permitted. "
 
+
 }]);
