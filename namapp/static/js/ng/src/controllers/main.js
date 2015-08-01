@@ -40,7 +40,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         supplement: "http://vcg.seas.harvard.edu/files/pfister/files/supplemental-infovis128.pdf",
         video: "http://vcg.seas.harvard.edu/files/pfister/files/experiment-screengrab.mp4",
         slides:"http://vcg.seas.harvard.edu/files/pfister/files/infovis2013_borkin-vizmem.pdf",
-        bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83461",
+        bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476",
         authors: "Borkin, M., Vo, A., Bylinskii, Z., Isola, P., Sunkavalli, S., Oliva, A., & Pfister, H.",
         source: "IEEE Transactions on Visualization and Computer Graphics (Proceedings of InfoVis 2013)"
       }
@@ -98,17 +98,17 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         {
           name: "all5k",
           desc: "all5k contains 5,693 single- and multi-panel visualizations scraped from the web from seven different online sources making up a total of four different source categories (government and world organizations, news media, infographics, and scientific publications). We provide (1) the original visualizations, (2) original URLs, (3) source and (4) category labels, as well as (5) whether each visualization is single or multi-panel. This data is described in “What makes a visualization memorable?” (InfoVis 2013).",
-          bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83461"
+          bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
           name: "single2k",
           desc: "single2k contains a subset of the visualizations in all5k, limited to only single-panel, stand-alone visualizations (a total of 2,070 visualizations). We provide (1) the original visualizations, (2) original URLs, (3) source and (4) category labels, (5) visualization type, and (6) a label indicating the presence/absence of pictorial element(s). The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
-          bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83461"
+          bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
           name: "targets410",
           desc: "targets410 includes the 410 target visualizations used in the Amazon Mechanical Turk (AMT) experiments presented in “What makes a visualization memorable?” (InfoVis 2013). These are a subset of the single2k single-panel visualizations, that have also been annotated with 6 attributes (data-ink ratio, number of distinct colors, black&white, visual density, human-recognizable object, human depiction). Thus, we provide (1) the original visualizations, (2) original URLs, (3) source and (4) category labels, (5) visualization type, and (6-12) the attributes described above, as well as the memorability scores gathered from the AMT experiments: (13) hit rate (HR) and (14) false-alarm rate (FAR) for each visualization.",
-          bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83461"
+          bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
           name: "targets393",
@@ -123,6 +123,14 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
           return re.test(email);
       }
       $scope.request = function () {
+        if ($("#licensechk").prop('checked')==false){
+          $("#license-alert").show();
+          $timeout(function(){
+            $("#license-alert").hide(400);
+          },2000)
+          return;         
+        }
+
         // validate form data
         var name      = $("#name").val();
         var email     = $("#email").val();
@@ -149,9 +157,9 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
           $log.log(d.name + ", " + $("#"+d.name).prop('checked'));
         })
         if (requested.length==0) {          
-          $("#license-alert").show();
+          $("#data-alert").show();
           $timeout(function(){
-            $("#license-alert").hide(400);
+            $("#data-alert").hide(400);
           },2000)
           return;
         } 

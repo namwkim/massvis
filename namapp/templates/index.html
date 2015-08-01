@@ -199,9 +199,10 @@
 					</div> -->
 					<div>
 							<p>
-								<%license%>
+								<input type="checkbox" id="licensechk"> <%license%>
 							</p>
-							<div class="input-group center-block">
+							<div class="input-group center-block" style="font-size:16px;">
+								<div>Please select the dataset images you would like to receive:</div> 
 								<ul class="list-inline" aria-multiselectable="true">
 									<li ng-repeat="data in datasets">
 										<input type="checkbox" id="<% data.name %>"> <% data.name %>
@@ -235,6 +236,9 @@
 					  <strong>Warning!</strong> Your name and email are required!
 					</div>
 					<div id="license-alert" class="alert alert-warning" style="display:none">
+					  <strong>Warning!</strong> You have to agree to the license!
+					</div>	
+					<div id="data-alert" class="alert alert-warning" style="display:none">
 					  <strong>Warning!</strong> You have to check at least one dataset!
 					</div>					
 					<button type="button" class="btn btn-default btn-xl wow tada" ng-click="request()"><i class="fa fa-paper-plane fa-lg"></i> Download </button>
