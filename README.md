@@ -6,7 +6,8 @@ Install
 -------
 - Dependencies : node, npm, grunt, bower, python, pip
   * This app builds on flask-python-server, angularjs
-- Add the four data files into the 'namapp/data':
+- Add the four data files into the 'namapp/data': 
+  * "all5k.zip", "single2k.zip", "targets410.zip", "targets393.zip"
 - Run following commands.
 ```
 pip install -r requirements.txt
