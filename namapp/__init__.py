@@ -33,7 +33,7 @@ def datarequest():
     #1 save request info into a file (requests/)
     timestamp = datetime.datetime.today().strftime("%Y-%m-%d-%H:%M:%S")
     app.logger.info(timestamp)
-    filename = timestamp + datareq['email']
+    filename = timestamp + datareq['email']+".json"
     savepath = os.path.join(app.config['REQUEST_FOLDER'], filename)
     with open(savepath, 'w') as outfile:
         json.dump(datareq, outfile)
