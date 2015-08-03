@@ -24,9 +24,9 @@ pip install virtualenvwrapper
 export WORKON_HOME=~/Envs
 mkdir -p $WORKON_HOME
 source /usr/local/bin/virtualenvwrapper.sh  # or maybe at /usr/bin/
-mkvirtualenv hyecoo
+mkvirtualenv massvis
 
-(hyecoo)$ pip install -r requirements.txt
+(massvis)$ pip install -r requirements.txt
 npm install
 grunt build
 grunt run  
