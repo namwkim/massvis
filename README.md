@@ -6,7 +6,7 @@ Install
 -------
 - Dependencies : node, npm, grunt, bower, python, pip
   * This app builds on flask-python-server, angularjs
-- Add the four data files into the 'namapp/data': 
+- Add following four data files into the 'namapp/data': 
   * "all5k.zip", "single2k.zip", "targets410.zip", "targets393.zip"
 - Run following commands.
 ```
@@ -15,7 +15,7 @@ npm install
 grunt build
 grunt run
 ```
-- if you want to run as a demon, try 'nohup grunt run &'
+- If you want to run as a demon, try 'nohup grunt run &'
 - Go to: localhost:3333.
 - Optional, but recommended way. see: [https://goo.gl/EaCMLJ])
 ```
