@@ -34,3 +34,4 @@ instance/
 *.out
 *.log
 *.pyc
+.htaccess.mit
