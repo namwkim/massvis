@@ -177,7 +177,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         }
 
 
-        $http.post("/datarequest", request)
+        $http.post("index.fcgi/datarequest", request)
         .success(function(result){
           $log.log(result)
           if (result){
