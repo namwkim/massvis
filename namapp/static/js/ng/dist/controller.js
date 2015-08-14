@@ -1,4 +1,4 @@
-/*! nam-web - v0.0.0 - 2015-08-09 */
+/*! nam-web - v0.0.0 - 2015-08-14 */
 
 namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function ($scope, $log, $timeout, $http) {
 
@@ -178,7 +178,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         }
 
 
-        $http.post("/datarequest", request)
+        $http.post("index.fcgi/datarequest", request)
         .success(function(result){
           $log.log(result)
           if (result){
