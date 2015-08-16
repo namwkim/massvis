@@ -6,5 +6,5 @@ BCRYPT_LEVEL = 12 # Configuration for the Flask-Bcrypt extension
 
 USERNAME = "MASSVIS"
 PASSWORD = "NAMWOOK_all5k"
-DATA_FOLDER = "namapp/data/"
-REQUEST_FOLDER = "namapp/requests/"
+DATA_FOLDER = "/mit/massvis/web_scripts/namapp/data/"
+REQUEST_FOLDER = "/mit/massvis/web_scripts/namapp/requests"
