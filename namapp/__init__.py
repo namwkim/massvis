@@ -78,7 +78,6 @@ def requires_auth(f):
     return decorated
 
 @app.route('/data/<path:filename>', methods=['GET'])
-# @requires_auth
 def download(filename):    
     password    = request.authorization['password'];
     splited     = password.split("_")
