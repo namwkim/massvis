@@ -54,7 +54,7 @@ def datarequest():
     passwords = [] #read_passwords()
     
     passwords.append(password)
-    write_passwords(passwords)
+    #write_passwords(passwords)
         
     return jsonify(password = password)
 
