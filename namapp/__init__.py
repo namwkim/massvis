@@ -50,9 +50,7 @@ def datarequest():
     # request specific
     suffix = "-".join(datareq['requested'])
     password = prefix + "_"+suffix;
-    passwords = read_passwords()
     
-    passwords.append(password)
     
     write_passwords(passwords)
         
