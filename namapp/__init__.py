@@ -24,12 +24,14 @@ def index():
 #     app.run(debug=True, host='0.0.0.0', port='6353') # app.debug = True  : this will reload server on code changes
 
 def read_passwords():
-    with open('passwords.csv', 'rb') as csvfile:
+    filepath = os.path.join(app.config['REQUEST_FOLDER'], 'passwords.csv')
+    with open(filepath, 'rb') as csvfile:
         rows = csv.reader(csvfile)
         passwords = next(rows).split(",")
         return passwords
 def write_passwords(passwords):
-    with open('passwords.csv', 'wb') as csvfile:
+    filepath = os.path.join(app.config['REQUEST_FOLDER'], 'passwords.csv')
+    with open(filepath, 'wb') as csvfile:
         csvwriter(csvfile).writerow(passwords)
         
 # Route that will process the file upload
