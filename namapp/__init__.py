@@ -3,7 +3,7 @@ import os
 
 from flask import Flask, Response, render_template, request, jsonify, logging, send_from_directory
 from functools import wraps
-import json
+import json, csv
 from werkzeug import secure_filename
 from time import gmtime, strftime, mktime, time, strptime
 import datetime
@@ -14,7 +14,6 @@ app.config.from_object('config')
 #app.config.from_pyfile('config.py')
 
 
-passwords = [];
 datasets = [ "all5k", "single2k", "targets410", "targets393"]
 
 @app.route('/')
@@ -24,7 +23,15 @@ def index():
 # if __name__ == '__main__':
 #     app.run(debug=True, host='0.0.0.0', port='6353') # app.debug = True  : this will reload server on code changes
 
-
+def read_passwords():
+    with open('passwords.csv', 'rb') as csvfile:
+        rows = csv.reader(csvfile)
+        passwords = next(rows).split(",")
+        return passwords
+def write_passwords(passwords):
+    with open('passwords.csv', 'wb') as csvfile:
+        csvwriter(csvfile).writerow(passwords)
+        
 # Route that will process the file upload
 @app.route('/datarequest', methods=['POST'])
 def datarequest():
@@ -43,7 +50,12 @@ def datarequest():
     # request specific
     suffix = "-".join(datareq['requested'])
     password = prefix + "_"+suffix;
-    passwords.append(password);
+    passwords = read_passwords()
+    
+    passwords.append(password)
+    
+    write_passwords(passwords)
+        
     return jsonify(password = password)
 
 def check_auth(username, password):
@@ -55,6 +67,7 @@ def check_auth(username, password):
         return False
     if password == app.config['PASSWORD']:
         return True
+    passwords = read_passwords()
     if password not in passwords:
         return False
     return True
@@ -97,8 +110,10 @@ def download(filename):
     timedelta = (currtime-prevtime)#/64/64
     app.logger.info(timedelta)
     if timedelta.days>1:
+        passwords = read_passwords()
         if password in passwords:
             passwords.remove(password)
+            write_passwords(passwords)
         app.logger.warning(password+" expired")
         return Response(password+" expired");
 
