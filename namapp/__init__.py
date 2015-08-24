@@ -26,7 +26,7 @@ def index():
 def read_passwords():
     with open('passwords.csv', 'rb') as csvfile:
         rows = csv.reader(csvfile)
-        firstrow = next(rows)
+        firstrow = rows.next()
         passwords = firstrow.split(",")
         return passwords
 def write_passwords(passwords):
