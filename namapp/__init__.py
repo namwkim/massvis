@@ -27,7 +27,6 @@ def read_passwords():
     with open('passwords.csv', 'rb') as csvfile:
         rows = csv.reader(csvfile)
         passwords = rows.next()
-        #passwords = firstrow.split(",")
         return passwords
 def write_passwords(passwords):
     with open('passwords.csv', 'wb') as csvfile:
