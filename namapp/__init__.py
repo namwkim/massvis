@@ -30,7 +30,7 @@ def read_passwords():
         return passwords
 def write_passwords(passwords):
     with open('passwords.csv', 'wb') as csvfile:
-        csvwriter(csvfile).writerow(passwords)
+        csv.writer(csvfile).writerow(passwords)
         
 # Route that will process the file upload
 @app.route('/datarequest', methods=['POST'])
@@ -51,10 +51,10 @@ def datarequest():
     suffix = "-".join(datareq['requested'])
     password = prefix + "_"+suffix;
     
-    passwords = [] #read_passwords()
+    passwords = read_passwords()
     
     passwords.append(password)
-    #write_passwords(passwords)
+    write_passwords(passwords)
         
     return jsonify(password = password)
 
