@@ -32,6 +32,9 @@ def read_passwords():
 def write_passwords(passwords):
     with open('passwords.csv', 'wb') as csvfile:
         csv.writer(csvfile).writerow(passwords)
+def write_debug(msg):
+    with open('debug.csv', 'wb') as csvfile:
+        csv.writer(csvfile).writerow(msg)
         
 # Route that will process the file upload
 @app.route('/datarequest', methods=['POST'])
@@ -65,12 +68,16 @@ def check_auth(username, password):
     """
     app.logger.info(username)
     if username != app.config['USERNAME']:
+        write_debug("USERNAME FAILED")
         return False
     if password == app.config['PASSWORD']:
+        write_debug("MASTER PASSWORD SUCCESS")
         return True
     passwords = read_passwords()
     if password not in passwords:
+        write_debug("PASSWORD FAILED")
         return False
+    write_debug("PASSWORD SUCCESS")
     return True
 
 def authenticate():
