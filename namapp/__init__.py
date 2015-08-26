@@ -59,7 +59,7 @@ def datarequest():
     
     passwords.append(password)
     write_passwords(passwords)
-        
+    write_debug("ISSUE A NEW PASSWORD: " + password)
     return jsonify(password = password)
 
 def check_auth(username, password):
