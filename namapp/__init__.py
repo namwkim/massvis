@@ -93,7 +93,9 @@ def requires_auth(f):
     def decorated(*args, **kwargs):
         auth = request.authorization
         #app.logger.info(auth)
+        write_debug("AUTHENTICATION CALLED")
         if not auth or not check_auth(auth.username, auth.password):
+            write_debug("AUTHENTICATION FAILED")
             return authenticate()
         return f(*args, **kwargs)
     return decorated
@@ -101,6 +103,7 @@ def requires_auth(f):
 @app.route('/data/<path:filename>', methods=['GET'])
 @requires_auth
 def download(filename):    
+    write_debug("DOWNLOADING...")
     password    = request.authorization['password'];
     splited     = password.split("_")
 
