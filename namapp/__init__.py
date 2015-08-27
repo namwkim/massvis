@@ -33,8 +33,8 @@ def write_passwords(passwords):
     with open('passwords.csv', 'wb') as csvfile:
         csv.writer(csvfile).writerow(passwords)
 def write_debug(msg):
-    with open('debug.csv', 'wb') as csvfile:
-        csv.writer(csvfile).writerow(msg)
+    with open('debug.txt', 'a') as f:
+        f.write(msg)
         
 # Route that will process the file upload
 @app.route('/datarequest', methods=['POST'])
