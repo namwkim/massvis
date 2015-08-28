@@ -35,6 +35,7 @@ def write_passwords(passwords):
 def write_debug(msg):
     with open('debug.txt', 'a') as f:
         f.write(msg)
+        f.write("\n")
         
 # Route that will process the file upload
 @app.route('/datarequest', methods=['POST'])
@@ -82,6 +83,7 @@ def check_auth(username, password):
 
 def authenticate():
     """Sends a 401 response that enables basic auth"""
+    write_debug("authenticate() called")
     return Response(
     'Could not verify your access level for that URL.\n'
     'You have to login with proper credentials', 401,
@@ -94,9 +96,11 @@ def requires_auth(f):
         auth = request.authorization
         #app.logger.info(auth)
         write_debug("AUTHENTICATION CALLED")
+        write_debug("AUTH: " + str(auth))
         if not auth or not check_auth(auth.username, auth.password):
             write_debug("AUTHENTICATION FAILED")
             return authenticate()
+        write_debug("AUTHENTICATION SUCCESS")
         return f(*args, **kwargs)
     return decorated
 
