@@ -2,8 +2,10 @@ MassVis Project Website
 -------
 Install
 -------
-- port number 3333
-- fast-cgi script added
+- To meet mit-server requirement, previous standalone server was replaced with a fast-cgi script:
+  - http://flask.pocoo.org/docs/0.10/deploying/fastcgi/
+- create a 'passwords.csv' file in the top-hierarchy folder.
+- install python-flask dependencies (most likely already being installed)
 ```
 pip install virtualenv
 pip install virtualenvwrapper
