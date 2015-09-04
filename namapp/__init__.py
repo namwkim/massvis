@@ -89,7 +89,15 @@ def authenticate():
     'You have to login with proper credentials', 401,
     {'WWW-Authenticate': 'Basic realm="Login Required"'})
 
-
+def requires_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth = request.authorization
+        write_debug("AUTH: " + str(auth))
+        
+        return f(*args, **kwargs)
+    return decorated
+    
 @app.route('/data/<path:filename>', methods=['GET'])
 @requires_auth
 def download(filename):    
