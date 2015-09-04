@@ -95,8 +95,8 @@ def requires_auth(f):
     def decorated(*args, **kwargs):
         auth = request.authorization
         #auth = request.environ.get('REMOTE_USER')
-        auth2 = request.environ.get('REMOTE_USER')
-        write_debug("REMOTE_USER:" + str(auth2))
+        # auth2 = request.environ.get('REMOTE_USER')
+        # write_debug("REMOTE_USER:" + str(auth2))
         #app.logger.info(auth)
         write_debug("AUTHENTICATION CALLED")
         write_debug("AUTH: " + str(auth))
