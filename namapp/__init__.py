@@ -94,7 +94,10 @@ def requires_auth(f):
     def decorated(*args, **kwargs):
         auth = request.authorization
         write_debug("AUTH: " + str(auth))
-        
+        if not auth or not check_auth(auth.username, auth.password):
+            write_debug("AUTHENTICATION FAILED")
+            return authenticate()
+        write_debug("AUTHENTICATION SUCCESS")
         return f(*args, **kwargs)
     return decorated
     
