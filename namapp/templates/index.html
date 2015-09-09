@@ -280,11 +280,11 @@
         <h4 class="modal-title" id="myModalLabel">Save Your Password</h4>
       </div>
       <div class="modal-body">
-<!--         <h4 >ID: <span id="accessid"> MASSVIS </span></h4>
-        <h4 >PW: <span id="accesspw"> </span></h4> -->
+<!--         <h4 >ID: <span id="accessid"> MASSVIS </span></h4>-->
+        <h4 >PW: <span id="accesspw"> </span></h4> 
         <ul>
         	<li ng-repeat="link in dataLinks">        		
-        		<a href="index.fcgi/data/<% link %>.zip?password=<% password %>" target="_blank">Download-<%link%> : <% password %></a>
+        		<a href="index.fcgi/data/<% link %>.zip?password=<% $parent.password %>" target="_blank">Download-<%link%></a>
         	</li>
         </ul>
       </div>

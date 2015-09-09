@@ -179,14 +179,15 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
 
         $http.post("index.fcgi/datarequest", request)
         .success(function(result){
-          $log.log(result)
+          
           if (result){
-            // $("#accesspw").html(result.password);
+            $("#accesspw").html(result.password);
             $("#myModal").modal();
 
             $timeout(function(){
               $log.log(requested);
               $scope.password  = result.password;
+              $log.log("PASSWORD:" + $scope.password)
               $scope.dataLinks = requested;
             })
           }else{
