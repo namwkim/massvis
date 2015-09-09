@@ -64,7 +64,7 @@ def datarequest():
     return jsonify(password = password)
 
     
-@app.route('/data/<path:filename>', methods=['POST'])
+@app.route('/data/<path:filename>', methods=['GET'])
 def download(filename):    
     write_debug("DOWNLOADING...")
     password  = request.args.get('password')

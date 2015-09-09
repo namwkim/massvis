@@ -116,7 +116,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
           bibtex: ""
         }
       ];
-
+      $scope.password = "";
       $scope.dataLinks=[];
       function validateEmail(email) {
           var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -181,9 +181,6 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         .success(function(result){
           $log.log(result)
           if (result){
-            //return hyperlink
-            $log.log(result)
-
             // $("#accesspw").html(result.password);
             $("#myModal").modal();
 
