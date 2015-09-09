@@ -185,13 +185,14 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
             $("#myModal").modal();
 
             $timeout(function(){
-              $log.log(requested);
+              
               $scope.password  = result.password;
               $log.log("PASSWORD:" + $scope.password)
               dataLinks = []
               requested.forEach(function(f){
                 dataLinks.push({link: (f+".zip"), pw: password});
               })
+              $log.log(dataLinks);
               $scope.dataLinks = dataLinks;
             })
           }else{
