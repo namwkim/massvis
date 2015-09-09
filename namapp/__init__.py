@@ -63,57 +63,22 @@ def datarequest():
     write_debug("ISSUE A NEW PASSWORD: " + password)
     return jsonify(password = password)
 
-def check_auth(username, password):
-    """This function is called to check if a username /
-    password combination is valid.
-    """
-    app.logger.info(username)
-    if username != app.config['USERNAME']:
-        write_debug("USERNAME FAILED")
-        return False
-    if password == app.config['PASSWORD']:
-        write_debug("MASTER PASSWORD SUCCESS")
-        return True
+    
+@app.route('/data/<path:filename>', methods=['POST'])
+def download(filename):    
+    write_debug("DOWNLOADING...")
+    password  = request.args.get('password')
     passwords = read_passwords()
     if password not in passwords:
         write_debug("PASSWORD FAILED")
-        return False
-    write_debug("PASSWORD SUCCESS")
-    return True
-
-def authenticate():
-    """Sends a 401 response that enables basic auth"""
-    write_debug("authenticate() called")
-    return Response(
-    'Could not verify your access level for that URL.\n'
-    'You have to login with proper credentials', 401,
-    {'WWW-Authenticate': 'Basic realm="Login Required"'})
-
-def requires_auth(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        auth = request.authorization
-        write_debug("AUTHENTICATION STARTED")
-        write_debug("AUTH: " + str(auth))
-        if not auth or not check_auth(auth.username, auth.password):
-            write_debug("AUTHENTICATION FAILED")
-            return authenticate()
-        write_debug("AUTHENTICATION SUCCESS")
-        return f(*args, **kwargs)
-    return decorated
-    
-@app.route('/data/<path:filename>', methods=['GET'])
-@requires_auth
-def download(filename):    
-    write_debug("DOWNLOADING...")
-    password    = request.authorization['password'];
-    splited     = password.split("_")
+        return Response("PASSWORD FAILED");
 
     #get pw-generated time
-    app.logger.info(base64.b64decode(splited[0]))
+    splited     = password.split("_")
+    write_debug(base64.b64decode(splited[0]))
     decoded  = base64.b64decode(splited[0])
 
-    app.logger.info("decoded:" + decoded)
+    write_debug("Decoded:" + decoded)
     prevtime = datetime.datetime.strptime(decoded, "%Y-%m-%d-%H:%M:%S")
 
     #get current time
@@ -121,13 +86,13 @@ def download(filename):
 
     #diff
     timedelta = (currtime-prevtime)#/64/64
-    app.logger.info(timedelta)
+    write_debug(timedelta)
     if timedelta.days>1:
         passwords = read_passwords()
         if password in passwords:
             passwords.remove(password)
             write_passwords(passwords)
-        app.logger.warning(password+" expired")
+        write_debug(password+" expired")
         return Response(password+" expired");
 
     #file access verfication    
@@ -135,8 +100,7 @@ def download(filename):
     name = filename.split('.')[0]
     # names = list(map(lambda x: x.split('.')[1], files))
     if name not in files:
-        app.logger.info(request.authorization)
-        return authenticate()
+        return Response("You don't have access to this file.");
     loadpath = os.path.join(os.getcwd() , app.config['DATA_FOLDER'])
     return send_from_directory(directory=loadpath, filename=filename)
 

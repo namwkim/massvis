@@ -184,11 +184,12 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
             //return hyperlink
             $log.log(result)
 
-            $("#accesspw").html(result.password);
+            // $("#accesspw").html(result.password);
             $("#myModal").modal();
 
             $timeout(function(){
-              $log.log(requested)
+              $log.log(requested);
+              $scope.password  = result.password;
               $scope.dataLinks = requested;
             })
           }else{
