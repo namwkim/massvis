@@ -188,7 +188,11 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
               $log.log(requested);
               $scope.password  = result.password;
               $log.log("PASSWORD:" + $scope.password)
-              $scope.dataLinks = requested;
+              dataLinks = []
+              requested.forEach(function(f){
+                dataLinks.push({link: (f+".zip"), pw: password});
+              })
+              $scope.dataLinks = dataLinks;
             })
           }else{
             $("#request-error").show();
