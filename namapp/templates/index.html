@@ -242,7 +242,7 @@
 								<div>Please select the dataset images you would like to receive:</div> 
 								<ul class="list-inline" aria-multiselectable="true">
 									<li ng-repeat="data in datasets">
-										<input type="checkbox" id="<% data.name %>"> <% data.name %>
+										<input type="checkbox" id="<% data.name %>"> <% data.name %> <% data.size %>
 										<a class="btn btn-primary" style="padding: 0px; background: transparent;" role="button"
 											data-toggle="collapse" href="#collapse<%data.name%>"
 											aria-expanded="false" aria-controls="collapse<%data.name%>">
@@ -254,7 +254,7 @@
 							<!-- <div id="accordion" aria-multiselectable="true"> -->
 								<div class="collapse" id="collapse<%data.name%>" ng-repeat="data in datasets">
 									<div class="well text-muted">
-										<h4><% data.name %> <% data.size %></h4>
+										<h4><% data.name %></h4>
 
 										<% data.desc %>
 										<div style="display:inline" ng-if="data.bibtex">
