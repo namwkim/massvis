@@ -86,7 +86,7 @@ def download(filename):
 
     #diff
     timedelta = (currtime-prevtime)#/64/64
-    write_debug(timedelta)
+    write_debug(str(timedelta.days))
     if timedelta.days>1:
         passwords = read_passwords()
         if password in passwords:
