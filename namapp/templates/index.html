@@ -53,12 +53,15 @@
 			<h1><% title %> </h1>
 			<hr>
 			<p><% subtitle %></p>
+			<hr class="light">
+			<p class="text-faded"><% projectDesc %></p>
+			<p class="text-faded"><% projectSubDesc %></p>
 			<!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a> -->
 		</div>
 	</div>
 </header>
 
-<section class="bg-primary" id="about">
+<!-- <section class="bg-primary" id="about">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 text-center">
@@ -69,19 +72,61 @@
 			</div>
 		</div>
 	</div>
+</section> -->
+<section class="bg-primary" id="details">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2 class="section-heading">Details</h2>
+				<hr class="light">
+				<p class="text-faded">Details coming soon...</p>
+				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
+			</div>
+		</div>
+	</div>
 </section>
 
 <section id="papers">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h2 class="section-heading">Papers</h2>
+				<h2 class="section-heading">Journal Papers</h2>
 				<hr class="primary">
 			</div>
 		</div>
 	</div>
 	<div class="container">
-		<div class="row" ng-repeat="paper in papers">
+		<div class="row" ng-repeat="paper in journalPapers">
+			<div class="col-md-12 text-center">
+				<!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
+				<div >
+					<h3><i class="fa fa-bookmark-o"></i> <%paper.title%></h3>
+					<p class="text-muted">
+						<%paper.authors%><br>
+						<%paper.source%><br>
+					</p>
+					<div>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>"> Paper</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.supplement"></i><a ng-if="paper.supplement" href="<%paper.supplement%>"> Supplement</a>
+						<i class="fa fa-film fa-lg" ng-if="paper.video"></i><a ng-if="paper.video" href="<%paper.video%>"> Video</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.slides"></i><a ng-if="paper.slides" href="<%paper.slides%>"> Slides</a>
+						<i class="fa fa-file-code-o fa-lg" ng-if="paper.bibtex"></i><a ng-if="paper.bibtex" href="<%paper.bibtex%>"> Bibtex</a>
+						<i class="fa fa-globe fa-lg" ng-if="paper.site"></i><a ng-if="paper.site" href="<%paper.site%>"> Website</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading">Posters and Workshop Papers</h2>
+				<hr class="primary">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row" ng-repeat="paper in otherPapers">
 			<div class="col-md-12 text-center">
 				<!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
 				<div >
@@ -103,18 +148,7 @@
 		</div>
 	</div>
 </section>
-<section class="bg-primary" id="details">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2 class="section-heading">Details</h2>
-				<hr class="light">
-				<p class="text-faded">Details coming soon...</p>
-				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
-			</div>
-		</div>
-	</div>
-</section>
+
 <section class="bg-primary" id="eyetracking">
 	<div class="container">
 		<div class="row">

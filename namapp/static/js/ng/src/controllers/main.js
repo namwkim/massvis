@@ -19,20 +19,15 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
     $scope.projectSubDesc = "The database consists of over 5,693 static visualizations of which 2,070 are “single” with visualization type information, and additionally 410 of these visualizations have extensive annotations, memorability scores, eye-movements, and labels."
 
     $scope.acknowledgement = "This work has been supported in part by the National Science Foundation (NSF) under grant 1016862, Google, and Xerox awards to Aude Oliva. This work has also been made possible through support from the Department of Defense through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program, the NSF Graduate Research Fellowship Program, the Natural Sciences and Engineering Research Council of Canada Postgraduate Doctoral Scholarship (NSERC PGS-D), and the Kwanjeong Educational Foundation."
-  	$scope.papers = [
+  	$scope.journalPapers = [
       {
         title: "Beyond Memorability: Visualization Recognition and Recall",
+        link: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-camera.pdf",
+        supplement: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-supplementalmaterial-camera.pdf",
+        video: "http://vcg.seas.harvard.edu/files/pfister/files/infovis-251_teaser.mp4",
+        bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/534661",
         authors: "Borkin, M.,  Bylinskii, Z., Kim, N.W., Bainbridge C.M., Yeh, C.S., Borkin, D., Pfister, H., & Oliva, A.",
-        source: "IEEE Transactions on Visualization and Computer Graphics (Proceedings of InfoVis 2015) - Conditionally Accepted"
-      },
-      {
-        title: "A Crowdsourced Alternative to Eye-tracking for Visualization Understanding",
-        link: "http://namwkim.org/files/CHI2015-WIP-Bubble.pdf",
-        slides:"http://namwkim.org/files/CHI2015-WIP-Bubble-Poster.pdf",
-        bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
-        authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Oliva, A., Gajos, K.Z., & Pfister, H.",
-        site: "https://study.namwkim.org/bubble/admin",
-        source: "Proceedings of the ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA '15)"
+        source: "IEEE Transactions on Visualization and Computer Graphics (Proceedings of InfoVis 2015)"
       },
       {
         title: "What Makes a Visualization Memorable?",
@@ -43,6 +38,17 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476",
         authors: "Borkin, M., Vo, A., Bylinskii, Z., Isola, P., Sunkavalli, S., Oliva, A., & Pfister, H.",
         source: "IEEE Transactions on Visualization and Computer Graphics (Proceedings of InfoVis 2013)"
+      }
+      ]
+    $scope.otherPapers = [
+      {
+        title: "A Crowdsourced Alternative to Eye-tracking for Visualization Understanding",
+        link: "http://namwkim.org/files/CHI2015-WIP-Bubble.pdf",
+        slides:"http://namwkim.org/files/CHI2015-WIP-Bubble-Poster.pdf",
+        bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
+        authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Oliva, A., Gajos, K.Z., & Pfister, H.",
+        site: "https://study.namwkim.org/bubble/admin",
+        source: "Proceedings of the ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA '15)"
       }
       ]
   	$scope.members = [
@@ -96,22 +102,22 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
 
       $scope.datasets = [
         {
-          name: "all5k",
+          name: "all5k (~160M)",
           desc: "all5k contains 5,693 single- and multi-panel visualizations scraped from the web from seven different online sources making up a total of four different source categories (government and world organizations, news media, infographics, and scientific publications). We provide (1) the original visualizations, (2) original URLs, (3) source and (4) category labels, as well as (5) whether each visualization is single or multi-panel. This data is described in “What makes a visualization memorable?” (InfoVis 2013).",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
-          name: "single2k",
+          name: "single2k (~140M)",
           desc: "single2k contains a subset of the visualizations in all5k, limited to only single-panel, stand-alone visualizations (a total of 2,070 visualizations). We provide (1) the original visualizations, (2) original URLs, (3) source and (4) category labels, (5) visualization type, and (6) a label indicating the presence/absence of pictorial element(s). The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
-          name: "targets410",
+          name: "targets410 (~625M)",
           desc: "targets410 includes the 410 target visualizations used in the Amazon Mechanical Turk (AMT) experiments presented in “What makes a visualization memorable?” (InfoVis 2013). These are a subset of the single2k single-panel visualizations, that have also been annotated with 6 attributes (data-ink ratio, number of distinct colors, black&white, visual density, human-recognizable object, human depiction). Thus, we provide (1) the original visualizations, (2) original URLs, (3) source and (4) category labels, (5) visualization type, and (6-12) the attributes described above, as well as the memorability scores gathered from the AMT experiments: (13) hit rate (HR) and (14) false-alarm rate (FAR) for each visualization.",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
-          name: "targets393",
+          name: "targets393 (~2.42G)",
           desc: "targets393 includes the393 visualizations that were used for the eye tracking experiments and analyses described in “Beyond memorability: visualization recognition and recall” (InfoVis 2015). We removed visualizations from targets410 that contained skewed aspect ratios for eye tracking. We include all (1)-(14) elements from targets410, as well as: (15) a transcribed title for each visualization, (16) title location, (17) memorability (HR) scores from the in-lab prolonged-exposure experiment, (18) whether the visualization contains data redundancy, (19) whether the visualization contains message redundancy, (20) eye movements from 33 participants (average of 16.7 viewers per visualization), (21) free-form descriptions generated from memory by 33 participants (average of 6.2 descriptions per visualization).",
           bibtex: ""
         }
