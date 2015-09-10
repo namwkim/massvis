@@ -254,7 +254,7 @@
 							<!-- <div id="accordion" aria-multiselectable="true"> -->
 								<div class="collapse" id="collapse<%data.name%>" ng-repeat="data in datasets">
 									<div class="well text-muted">
-										<h4><% data.name %> </h4>
+										<h4><% data.name %> <% data.size %></h4>
 
 										<% data.desc %>
 										<div style="display:inline" ng-if="data.bibtex">
