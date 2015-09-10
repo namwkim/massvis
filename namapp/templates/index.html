@@ -314,11 +314,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Save Your Password</h4>
+        <h4 class="modal-title" id="myModalLabel">Download</h4>
       </div>
       <div class="modal-body">
-<!--         <h4 >ID: <span id="accessid"> MASSVIS </span></h4>-->
-        <h4 >PW: <span id="accesspw"> </span></h4> 
+<!--         <h4 >ID: <span id="accessid"> MASSVIS </span></h4>
+        <h4 >PW: <span id="accesspw"> </span></h4> -->
         <ul>
         	<li ng-repeat="d in dataLinks">        		
         		<a href="index.fcgi/data/<% d.link %>?password=<% d.pw %>" target="_blank">Download-<% d.link%></a>
