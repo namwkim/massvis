@@ -1,4 +1,4 @@
-/*! nam-web - v0.0.0 - 2015-08-14 */
+/*! nam-web - v0.0.0 - 2015-09-09 */
 
 namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function ($scope, $log, $timeout, $http) {
 
@@ -117,7 +117,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
           bibtex: ""
         }
       ];
-
+      $scope.password = "";
       $scope.dataLinks=[];
       function validateEmail(email) {
           var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -180,17 +180,21 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
 
         $http.post("index.fcgi/datarequest", request)
         .success(function(result){
-          $log.log(result)
+          
           if (result){
-            //return hyperlink
-            $log.log(result)
-
             $("#accesspw").html(result.password);
             $("#myModal").modal();
 
             $timeout(function(){
-              $log.log(requested)
-              $scope.dataLinks = requested;
+              
+              $scope.password  = result.password;
+              $log.log("PASSWORD:" + $scope.password)
+              dataLinks = []
+              requested.forEach(function(f){
+                dataLinks.push({link: (f+".zip"), pw: password});
+              })
+              $log.log(dataLinks);
+              $scope.dataLinks = dataLinks;
             })
           }else{
             $("#request-error").show();
