@@ -190,7 +190,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
               $log.log("PASSWORD:" + $scope.password)
               dataLinks = []
               requested.forEach(function(f){
-                dataLinks.push({link: (f+".zip"), pw: password});
+                dataLinks.push({link: (f+".zip"), pw: $scope.password});
               })
               $log.log(dataLinks);
               $scope.dataLinks = dataLinks;
