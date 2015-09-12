@@ -6,19 +6,23 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
   	$scope.subtitle		= "Massachusetts (Massive) Visualization Dataset"
 
   	$scope.projectTitle = "Massachusetts (Massive) Visualization Dataset"
-  	$scope.projectDesc = 'Understanding the cognitive and perceptual processing of a visualization is \
-    essential for effective data presentation as well as communication to the viewer. To gain deeper \
-    insight into what elements of a visualization affect its memorability, recognition, recall, and \
-    comprehension, we constructed the MASSVIS Database.  This database, one of the largest to date of \
-    real-world visualizations, was constructed by scraping multiple online sources of visualizations from \
-    various publication venues including government reports, infographic blogs, news media websites, and \
-    scientific journals. The diversity and distribution of these visualizations represent a broad set of \
-    data visualizations "in the wild".  In addition to gaining insight into the visual encoding techniques\
-     and designs utilized by the different publication venues, this database also serves as a resource for\
-      cognitive and perceptual experiments.';
-    $scope.projectSubDesc = "The database consists of over 5,693 static visualizations of which 2,070 are “single” with visualization type information, and additionally 410 of these visualizations have extensive annotations, memorability scores, eye-movements, and labels."
+  	$scope.projectDesc = 'Understanding the cognitive and perceptual processing of a visualization is essential for effective data presentation and communication to the viewer. The MASSVIS Database was constructed to gain deeper insight into the elements of a visualization that affect its memorability, recognition, recall, and comprehension. This is one of the largest real-world visualization databases, scraped from various online publication venues including government reports, infographic blogs, news media websites, and scientific journals. The diversity and distribution of these visualizations represents data visualizations "in the wild". In addition to providing insights about visual encoding techniques and designs utilized by the different publication venues, this database is also a resource for cognitive and perceptual experiments.';
+    $scope.projectSubDesc = "MASSVIS consists of over 5000 static visualizations of which over 2000 contain visualization type information, and hundreds of these visualizations have extensive annotations, memorability scores, eye-movements, and labels."
 
-    $scope.acknowledgement = "This work has been supported in part by the National Science Foundation (NSF) under grant 1016862, Google, and Xerox awards to Aude Oliva. This work has also been made possible through support from the Department of Defense through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program, the NSF Graduate Research Fellowship Program, the Natural Sciences and Engineering Research Council of Canada Postgraduate Doctoral Scholarship (NSERC PGS-D), and the Kwanjeong Educational Foundation."
+
+    $scope.aboutDetails = [
+      "1 detailed taxonomy for classifying visualizations",
+      "10s of eye-tracking lab participants",
+      "100s of labeled visualizations",
+      "100s of memorability scores",
+      "100s of participants on Amazon’s Mechanical Turk",
+      '1000s of visualizations "in-the-wild"',
+      '1000s of manual annotations',
+      '1000s of polygonal labels on visualizations',
+      '1000s of text descriptions',
+      '10,000s of eye fixations'
+    ]
+    $scope.acknowledgement = "This work has been supported in part by the National Science Foundation (NSF) under grant 1016862, MIT Big Data Initiative at CSAIL, Google, and Xerox awards to Aude Oliva. This work has also been made possible through support from the Department of Defense through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program, the NSF Graduate Research Fellowship Program, the Natural Sciences and Engineering Research Council of Canada Postgraduate Doctoral Scholarship (NSERC PGS-D), and the Kwanjeong Educational Foundation."
   	$scope.journalPapers = [
       {
         title: "Beyond Memorability: Visualization Recognition and Recall",
@@ -103,26 +107,26 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
       $scope.datasets = [
         {
           name: "all5k",
-          size: "(~160M)",
-          desc: "all5k contains 5,693 single- and multi-panel visualizations scraped from the web from seven different online sources making up a total of four different source categories (government and world organizations, news media, infographics, and scientific publications). We provide (1) the original visualizations, (2) original URLs, (3) source and (4) category labels, as well as (5) whether each visualization is single or multi-panel. This data is described in “What makes a visualization memorable?” (InfoVis 2013).",
+          size: "(~2.42G)",
+          desc: "This data contains 5,693 single- and multi-panel visualizations scraped from the web from seven different online sources making up a total of four different source categories (government and world organizations, news media, infographics, and scientific publications). We provide the original visualizations, original URLs, source and category labels, as well as whether each visualization is single or multi-panel. This data is described in “What makes a visualization memorable?” (InfoVis 2013).",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
           name: "single2k",
-          size: "(~140M)",
-          desc: "single2k contains a subset of the visualizations in all5k, limited to only single-panel, stand-alone visualizations (a total of 2,070 visualizations). We provide (1) the original visualizations, (2) original URLs, (3) source and (4) category labels, (5) visualization type, and (6) a label indicating the presence/absence of pictorial element(s). The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
+          size: "(~625M)",
+          desc: "This data contains a subset of the visualizations in all5k, limited to only single-panel, stand-alone visualizations (a total of 2,070 visualizations). We provide the original visualizations, original URLs, source and category labels, visualization type, and a label indicating the presence/absence of pictorial element(s). The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
           name: "targets410",
-          size: "(~625M)",
-          desc: "targets410 includes the 410 target visualizations used in the Amazon Mechanical Turk (AMT) experiments presented in “What makes a visualization memorable?” (InfoVis 2013). These are a subset of the single2k single-panel visualizations, that have also been annotated with 6 attributes (data-ink ratio, number of distinct colors, black&white, visual density, human-recognizable object, human depiction). Thus, we provide (1) the original visualizations, (2) original URLs, (3) source and (4) category labels, (5) visualization type, and (6-12) the attributes described above, as well as the memorability scores gathered from the AMT experiments: (13) hit rate (HR) and (14) false-alarm rate (FAR) for each visualization.",
+          size: "(~140M)",
+          desc: "This data contains taxonomic labels and attributes for 410 visualizations. These include the source, category, and type of each visualization, as well as the following attributes: data-ink ratio, number of distinctive colors, black & white, visual density, human recognizable object (HRO), and human depiction. We also provide the transcribed title for each visualization and where the title was located on the visualization. From the Amazon Mechanical Turk (AMT) Experiments, we provide the number of hits, misses, false alarms, and correct rejections per image, which can be converted into the desired memorability scores (HR, FAR, dprime, etc.)",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
           name: "targets393",
-          size: "(~2.42G)",
-          desc: "targets393 includes the393 visualizations that were used for the eye tracking experiments and analyses described in “Beyond memorability: visualization recognition and recall” (InfoVis 2015). We removed visualizations from targets410 that contained skewed aspect ratios for eye tracking. We include all (1)-(14) elements from targets410, as well as: (15) a transcribed title for each visualization, (16) title location, (17) memorability (HR) scores from the in-lab prolonged-exposure experiment, (18) whether the visualization contains data redundancy, (19) whether the visualization contains message redundancy, (20) eye movements from 33 participants (average of 16.7 viewers per visualization), (21) free-form descriptions generated from memory by 33 participants (average of 6.2 descriptions per visualization).",
+          size: "(~160M)",
+          desc: "This data contains taxonomic labels and attributes for 393 visualizations. These include the source, category, and type of each visualization, as well as the following attributes: data-ink ratio, number of distinctive colors, black & white, visual density, human recognizable object (HRO), and human depiction. We also provide the transcribed title for each visualization and where the title was located on the visualization, as well as whether the visualization contained data or message redundancy. From we include at-a-glance memorability scores (after 1 second of viewing) and from we include prolonged memorability scores (after 10 seconds of viewing).",
           bibtex: ""
         }
       ];
