@@ -18,6 +18,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
       ["100s of participants on Amazon’s Mechanical Turk","100s-of-people.png"],
       ['1000s of visualizations "in-the-wild"',"1000s-visualization.png"],
       ['1000s of manual annotations',"1000s-annotations.png"],
+      ['1000s of polygonal labels on visualizations',"100s-labeled-viz.png"],
       ['1000s of text descriptions',"1000s-text-desc.png"],
       ['10,000s of eye fixations', "1000s-eyetracking.png"]
     ]
