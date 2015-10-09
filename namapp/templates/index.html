@@ -83,19 +83,12 @@
 				<h2 class="section-heading">About</h2>
 				<hr class="light">
 
-				<div class="row" style="padding-bottom:10px" >
-					<div class="col-lg-3 col-md-3 text-center" ng-repeat="item in aboutDetails">
-							<div class="service-box">
-									<img ng-src="index.fcgi/img/icons/<% item[1] %>" alt="<% item[1] %>"  class="img-rounded img-responsive">
-									<!-- <h3>Sturdy Templates</h3> -->
-									<p class="text-faded"><% item[0] %></p>
-							</div>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-12">
+				<div class="row" style="padding-bottom:10px" ng-repeat="item in aboutDetails">
+					<div class="col-md-4 col-sm-4 col-xs-4">
 						<img ng-src="index.fcgi/img/icons/<% item[1] %>" alt="<% item[1] %>"  class="img-rounded img-responsive">
 					</div>
 					<div class="col-md-8 col-sm-8 col-xs-8">
-
+						<p><% item[0] %></p>
 					</div>
 				</div>
 				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
