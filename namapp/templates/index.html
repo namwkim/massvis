@@ -83,14 +83,12 @@
 				<h2 class="section-heading">About</h2>
 				<hr class="light">
 
-				<div ng-repeat="item in aboutDetails">
-					<div class="row" style="padding-bottom:10px">
-						<div class="col-md-1">
-							<img ng-src="index.fcgi/img/icons/<% item[1] %>" alt="<% item[1] %>"  class="img-rounded img-responsive">
-						</div>
-					  <div class="col-md-4" style="vertical-align: text-top;">
-							<p><% item[0] %></p>
-						</div>
+				<div class="row" style="padding-bottom:10px" ng-repeat="item in aboutDetails">
+					<div class="col-md-2 col-sm-3 col-xs-4">
+						<img ng-src="index.fcgi/img/icons/<% item[1] %>" alt="<% item[1] %>"  class="img-rounded img-responsive">
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-8">
+						<p><% item[0] %></p>
 					</div>
 				</div>
 				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
