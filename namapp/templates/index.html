@@ -83,13 +83,21 @@
 				<h2 class="section-heading">About</h2>
 				<hr class="light">
 
-				<div class="row" style="padding-bottom:10px" ng-repeat="item in aboutDetails">
-					<div class="col-md-2 col-sm-4 col-xs-4">
-						<img ng-src="index.fcgi/img/icons/<% item[1] %>" alt="<% item[1] %>"  class="img-rounded img-responsive">
+				<div class="row" style="padding-bottom:10px" >
+					<div class="col-md-2 col-sm-4 col-xs-4" ng-repeat="item in aboutDetails">
+						<div class="media">
+						  <div class="media-left">
+								<img ng-src="index.fcgi/img/icons/<% item[1] %>" alt="<% item[1] %>"  class="media-object img-rounded img-responsive">
+						  </div>
+						  <div class="media-body">
+								<% item[0] %>
+						    <!-- <h4 class="media-heading">Media heading</h4> -->
+						  </div>
+						</div>
 					</div>
-					<div class="col-md-10 col-sm-8 col-xs-8" style="vertical-align:middle">
-						<p><% item[0] %></p>
-					</div>
+					<!-- <div class="col-md-10 col-sm-8 col-xs-8" style="vertical-align:middle">
+
+					</div> -->
 				</div>
 				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
 			</div>
