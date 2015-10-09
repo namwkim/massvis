@@ -11,16 +11,15 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
 
 
     $scope.aboutDetails = [
-      "1 detailed taxonomy for classifying visualizations",
-      "10s of eye-tracking lab participants",
-      "100s of labeled visualizations",
-      "100s of memorability scores",
-      "100s of participants on Amazon’s Mechanical Turk",
-      '1000s of visualizations "in-the-wild"',
-      '1000s of manual annotations',
-      '1000s of polygonal labels on visualizations',
-      '1000s of text descriptions',
-      '10,000s of eye fixations'
+      ["1 detailed taxonomy for classifying visualizations", "taxonomy.png"]
+      ["10s of eye-tracking lab participants", "10s-of-people.png"]
+      ["100s of labeled visualizations","100s-labeled-viz.png"]
+      ["100s of memorability scores","100s-mem-scores.png"]
+      ["100s of participants on Amazon’s Mechanical Turk","100s-of-people.png"]
+      ['1000s of visualizations "in-the-wild"',"1000s-visualization.png"]
+      ['1000s of manual annotations',"1000s-annotations.png"]
+      ['1000s of text descriptions',"1000s-text-desc.png"]
+      ['10,000s of eye fixations', "1000s-eyetracking.png"]
     ]
     $scope.acknowledgement = "This work has been supported in part by the National Science Foundation (NSF) under grant 1016862, MIT Big Data Initiative at CSAIL, Google, and Xerox awards to Aude Oliva. This work has also been made possible through support from the Department of Defense through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program, the NSF Graduate Research Fellowship Program, the Natural Sciences and Engineering Research Council of Canada Postgraduate Doctoral Scholarship (NSERC PGS-D), and the Kwanjeong Educational Foundation."
   	$scope.journalPapers = [
@@ -142,7 +141,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
           $timeout(function(){
             $("#license-alert").hide(400);
           },2000)
-          return;         
+          return;
         }
 
         // validate form data
@@ -170,13 +169,13 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
             requested.push(d.name);
           $log.log(d.name + ", " + $("#"+d.name).prop('checked'));
         })
-        if (requested.length==0) {          
+        if (requested.length==0) {
           $("#data-alert").show();
           $timeout(function(){
             $("#data-alert").hide(400);
           },2000)
           return;
-        } 
+        }
 
         var request = {
           name  : name,
@@ -193,13 +192,13 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
 
         $http.post("index.fcgi/datarequest", request)
         .success(function(result){
-          
+
           if (result){
             $("#accesspw").html(result.password);
             $("#myModal").modal();
 
             $timeout(function(){
-              
+
               $scope.password  = result.password;
               $log.log("PASSWORD:" + $scope.password)
               dataLinks = []

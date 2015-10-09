@@ -82,7 +82,16 @@
 			<div class="col-lg-8 col-lg-offset-2 text-center">
 				<h2 class="section-heading">About</h2>
 				<hr class="light">
-				<div ng-repeat="item in aboutDetails"><p><% item %></p></div>
+				<div ng-repeat="item in aboutDetails">
+					<div class="row">
+						<div class="col-md-4">
+							<p><% item[0] %></p>
+						</div>
+					  <div class="col-md-8">
+							<img ng-src="index.fcgi/img/members/<% item[1] %>" alt="<% item[1] %>"  class="img-rounded img-responsive">
+						</div>
+					</div>
+				</div>
 				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
 			</div>
 		</div>
@@ -240,7 +249,7 @@
 								<input type="checkbox" id="licensechk"> <%license%>
 							</p>
 							<div class="input-group center-block" style="font-size:16px;">
-								<div>Please select the dataset images you would like to receive:</div> 
+								<div>Please select the dataset images you would like to receive:</div>
 								<ul class="list-inline" aria-multiselectable="true">
 									<li ng-repeat="data in datasets">
 										<input type="checkbox" id="<% data.name %>"> <% data.name %> <% data.size %>
@@ -275,10 +284,10 @@
 					</div>
 					<div id="license-alert" class="alert alert-warning" style="display:none">
 					  <strong>Warning!</strong> You have to agree to the license!
-					</div>	
+					</div>
 					<div id="data-alert" class="alert alert-warning" style="display:none">
 					  <strong>Warning!</strong> You have to check at least one dataset!
-					</div>					
+					</div>
 					<button type="button" class="btn btn-default btn-xl wow tada" ng-click="request()"><i class="fa fa-paper-plane fa-lg"></i> Download </button>
 				</form>
 				<h4 style="margin-top:20px;"><i class="fa fa-exclamation-circle"></i>
@@ -321,7 +330,7 @@
 <!--         <h4 >ID: <span id="accessid"> MASSVIS </span></h4>
         <h4 >PW: <span id="accesspw"> </span></h4> -->
         <ul>
-        	<li ng-repeat="d in dataLinks">        		
+        	<li ng-repeat="d in dataLinks">
         		<a href="index.fcgi/data/<% d.link %>?password=<% d.pw %>" target="_blank">Download-<% d.link%></a>
         	</li>
         </ul>
