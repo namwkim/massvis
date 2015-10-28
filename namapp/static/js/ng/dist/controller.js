@@ -55,7 +55,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         link: "http://web.mit.edu/zoya/www/Bylinskii_eyefixations_small.pdf",
         slides:"http://web.mit.edu/zoya/www/ETVIS_red.pdf",
         //bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
-        authors: "Bylinskii, Z., Borkin, M.",
+        authors: "Bylinskii, Z., & Borkin, M.",
         source: "First Workshop on Eyetracking and Visualizations (ETVIS 2015) in conjunction with IEEE VIS 2015"
       },
       {
