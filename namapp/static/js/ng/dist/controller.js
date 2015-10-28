@@ -1,6 +1,9 @@
 /*! nam-web - v0.0.0 - 2015-10-27 */
 
-namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function ($scope, $log, $timeout, $http) {
+namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", function ($scope, $log, $timeout, $http, $sce) {
+    $scope.trustAsHtml = function(string) {
+        return $sce.trustAsHtml(string);
+    };
 
 
   	$scope.title 		= " MASSVIS Dataset"
@@ -35,7 +38,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         supplement: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-supplementalmaterial-camera.pdf",
         video: "http://vcg.seas.harvard.edu/files/pfister/files/infovis-251_teaser.mp4",
         bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/534661",
-        authors: "Borkin, M.,  Bylinskii, Z., Kim, N.W., Bainbridge C.M., Yeh, C.S., Borkin, D., Pfister, H., & Oliva, A.",
+        authors: "Borkin, M.<sup>*</sup>,  Bylinskii, Z.<sup>*</sup>, Kim, N.W., Bainbridge C.M., Yeh, C.S., Borkin, D., Pfister, H., & Oliva, A.",
         source: "IEEE Transactions on Visualization and Computer Graphics (Proceedings of InfoVis 2015)"
       },
       {
