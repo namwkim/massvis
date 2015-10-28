@@ -153,8 +153,9 @@
 				<div >
 					<h3><i class="fa fa-bookmark-o"></i> <%paper.title%></h3>
 					<!-- <p ng-bind-html="trustAsHtml(paper.authors)"> -->
-						<div class="text-muted" ng-bind-html="trustAsHtml(paper.authors)"></div>
-						<div><%paper.source%></div>
+						<p class="text-muted" ng-bind-html="trustAsHtml(paper.authors)">
+							<%paper.source%>
+						</p>
 					<!-- </p> -->
 					<div>
 						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>"> Paper</a>
