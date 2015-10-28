@@ -1,4 +1,4 @@
-/*! nam-web - v0.0.0 - 2015-10-09 */
+/*! nam-web - v0.0.0 - 2015-10-27 */
 
 namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function ($scope, $log, $timeout, $http) {
 
@@ -12,16 +12,20 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
 
 
     $scope.aboutDetails = [
-      ["1 detailed taxonomy for classifying visualizations", "taxonomy.png"],
-      ["10s of eye-tracking lab participants", "10s-of-people.png"],
-      ["100s of labeled visualizations","100s-labeled-viz.png"],
-      ["100s of memorability scores","100s-mem-scores.png"],
-      ["100s of participants on Amazon’s Mechanical Turk","100s-of-people.png"],
-      ['1000s of visualizations "in-the-wild"',"1000s-visualization.png"],
-      ['1000s of manual annotations',"1000s-annotations.png"],
-      ['1000s of polygonal labels on visualizations',"100s-labeled-viz.png"],
-      ['1000s of text descriptions',"1000s-text-desc.png"],
-      ['10,000s of eye fixations', "1000s-eyetracking.png"]
+      [["1 detailed taxonomy for classifying visualizations", "taxonomy.png"],
+      ["10s of eye-tracking lab participants", "10s-of-people.png"]],
+      
+      [["100s of labeled visualizations","100s-labeled-viz.png"],
+      ["100s of memorability scores","100s-mem-scores.png"]],
+
+      [["100s of participants on Amazon’s Mechanical Turk","100s-of-people.png"],
+      ['1000s of visualizations "in-the-wild"',"1000s-visualization.png"]],
+
+      [['1000s of manual annotations',"1000s-annotations.png"],
+      ['1000s of polygonal labels on visualizations',"100s-labeled-viz.png"]],
+
+      [['1000s of text descriptions',"1000s-text-desc.png"],
+      ['10,000s of eye fixations', "1000s-eyetracking.png"]]
     ]
     $scope.acknowledgement = "This work has been supported in part by the National Science Foundation (NSF) under grant 1016862, MIT Big Data Initiative at CSAIL, Google, and Xerox awards to Aude Oliva. This work has also been made possible through support from the Department of Defense through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program, the NSF Graduate Research Fellowship Program, the Natural Sciences and Engineering Research Council of Canada Postgraduate Doctoral Scholarship (NSERC PGS-D), and the Kwanjeong Educational Foundation."
   	$scope.journalPapers = [
@@ -46,6 +50,14 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
       }
       ]
     $scope.otherPapers = [
+      {
+        title: "Eye Fixation Metrics for Large Scale Analysis of Information Visualizations",
+        link: "http://web.mit.edu/zoya/www/Bylinskii_eyefixations_small.pdf",
+        slides:"http://web.mit.edu/zoya/www/ETVIS_red.pdf",
+        //bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
+        authors: "Bylinskii, Z., Borkin, M.",
+        source: "Workshop on Eye Tracking and Visualization (ETVIS) 2015"
+      },
       {
         title: "A Crowdsourced Alternative to Eye-tracking for Visualization Understanding",
         link: "http://namwkim.org/files/CHI2015-WIP-Bubble.pdf",
@@ -109,13 +121,13 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         {
           name: "all5k",
           size: "(~2.42G)",
-          desc: "This data contains 5,693 single- and multi-panel visualizations scraped from the web from seven different online sources making up a total of four different source categories (government and world organizations, news media, infographics, and scientific publications). We provide the original visualizations, original URLs, source and category labels, as well as whether each visualization is single or multi-panel. This data is described in “What makes a visualization memorable?” (InfoVis 2013).",
+          desc: "This data contains 5,814 single- and multi-panel visualizations scraped from the web from seven different online sources making up a total of four different source categories (government and world organizations, news media, infographics, and scientific publications). We provide the original visualizations, original URLs, source and category labels, as well as whether each visualization is single or multi-panel. This data is described in “What makes a visualization memorable?” (InfoVis 2013).",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
           name: "single2k",
           size: "(~625M)",
-          desc: "This data contains a subset of the visualizations in all5k, limited to only single-panel, stand-alone visualizations (a total of 2,070 visualizations). We provide the original visualizations, original URLs, source and category labels, visualization type, and a label indicating the presence/absence of pictorial element(s). The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
+          desc: "This data contains a subset of the visualizations in all5k, limited to only single-panel, stand-alone visualizations (a total of 2,068 visualizations). We provide the original visualizations, original URLs, source and category labels, visualization type, and a label indicating the presence/absence of pictorial element(s). The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {

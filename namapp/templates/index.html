@@ -83,8 +83,8 @@
 				<h2 class="section-heading">About</h2>
 				<hr class="light">
 
-				<div class="row" >
-					<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12" ng-repeat="item in aboutDetails">
+				<div class="row" ng-repeat="twoItems in aboutDetails" >
+					<div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="item in twoItems">
 						<div class="media" style="padding-bottom:10px">
 						  <div class="media-left">
 								<img width="100" ng-src="index.fcgi/img/icons/<% item[1] %>" alt="<% item[1] %>"  class="media-object img-rounded">
