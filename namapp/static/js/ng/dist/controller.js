@@ -14,7 +14,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
     $scope.aboutDetails = [
       [["1 detailed taxonomy for classifying visualizations", "taxonomy.png"],
       ["10s of eye-tracking lab participants", "10s-of-people.png"]],
-      
+
       [["100s of labeled visualizations","100s-labeled-viz.png"],
       ["100s of memorability scores","100s-mem-scores.png"]],
 
@@ -56,7 +56,8 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         slides:"http://web.mit.edu/zoya/www/ETVIS_red.pdf",
         //bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
         authors: "Bylinskii, Z., Borkin, M.",
-        source: "Workshop on Eye Tracking and Visualization (ETVIS) 2015"
+        site: " http://massvis.mit.edu/",
+        source: "First Workshop on Eyetracking and Visualizations (ETVIS 2015) in conjunction with IEEE VIS 2015"
       },
       {
         title: "A Crowdsourced Alternative to Eye-tracking for Visualization Understanding",
@@ -64,7 +65,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         slides:"http://namwkim.org/files/CHI2015-WIP-Bubble-Poster.pdf",
         bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
         authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Oliva, A., Gajos, K.Z., & Pfister, H.",
-        site: "https://study.namwkim.org/bubble/admin",
+        site: "https://study.namwkim.org/bubble/eval",
         source: "Proceedings of the ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA '15)"
       }
       ]
@@ -139,8 +140,8 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         {
           name: "targets393",
           size: "(~160M)",
-          desc: "This data contains taxonomic labels and attributes for 393 visualizations. These include the source, category, and type of each visualization, as well as the following attributes: data-ink ratio, number of distinctive colors, black & white, visual density, human recognizable object (HRO), and human depiction. We also provide the transcribed title for each visualization and where the title was located on the visualization, as well as whether the visualization contained data or message redundancy. From we include at-a-glance memorability scores (after 1 second of viewing) and from we include prolonged memorability scores (after 10 seconds of viewing).",
-          bibtex: ""
+          desc: "This data contains taxonomic labels and attributes for 393 visualizations. These include the source, category, and type of each visualization, as well as the following attributes: data-ink ratio, number of distinctive colors, black & white, visual density, human recognizable object (HRO), and human depiction. We also provide the transcribed title for each visualization and where the title was located on the visualization, as well as whether the visualization contained data or message redundancy. From Borkin et al. 2013 we include at-a-glance memorability scores (after 1 second of viewing) and from Borkin, Bylinskii et al. 2015 we include prolonged memorability scores (after 10 seconds of viewing). As described in “Beyond Memorability: Visualization Recognition and Recall“ (InfoVis 2015), we provide participant's eye movements and textual descriptions.",
+          bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/534661"
         }
       ];
       $scope.password = "";
