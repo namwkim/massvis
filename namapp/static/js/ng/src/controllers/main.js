@@ -117,7 +117,8 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
 
       $scope.eyeTitle = "Eye-movement Data";
       $scope.eyeDesc = "We have eye-movement data for a total of 393 visualizations and 33 viewers, with an average of 16 viewers per visualization. Each viewer looked at each visualization for 10 seconds, generating an average of 37 fixation points. This is a total of about 600 fixation points per visualization across all viewers. We store the (x,y) location of each fixation on a visualization, the time-point when the fixation occurred during the viewing period, and the duration (in ms) of each fixation. We provide tools for visualizing the fixation sequences, fixation durations, and fixation heatmaps on top of visualizations."
-
+      $scope.eyeData = "https://github.com/massvis/eyetracking";
+      $scope.eyeCode = "https://github.com/massvis/eyetracking/tree/master/matlab_files/visualizationCode";
 
       $scope.datasets = [
         {
