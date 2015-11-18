@@ -36,7 +36,7 @@ def write_debug(msg):
     with open('debug.txt', 'a') as f:
         f.write(msg)
         f.write("\n")
-        
+
 # Route that will process the file upload
 @app.route('/datarequest', methods=['POST'])
 def datarequest():
@@ -55,17 +55,16 @@ def datarequest():
     # request specific
     suffix = "-".join(datareq['requested'])
     password = prefix + "_"+suffix;
-    
+
     passwords = read_passwords()
-    
+
     passwords.append(password)
     write_passwords(passwords)
     write_debug("ISSUE A NEW PASSWORD: " + password)
     return jsonify(password = password)
 
-    
 @app.route('/data/<path:filename>', methods=['GET'])
-def download(filename):    
+def download(filename):
     write_debug("DOWNLOADING...")
     password  = request.args.get('password')
     passwords = read_passwords()
@@ -95,7 +94,7 @@ def download(filename):
         write_debug(password+" expired")
         return Response(password+" expired");
 
-    #file access verfication    
+    #file access verfication
     files = splited[1].split("-")
     name = filename.split('.')[0]
     # names = list(map(lambda x: x.split('.')[1], files))
@@ -103,4 +102,3 @@ def download(filename):
         return Response("You don't have access to this file.");
     loadpath = os.path.join(os.getcwd() , app.config['DATA_FOLDER'])
     return send_from_directory(directory=loadpath, filename=filename)
-

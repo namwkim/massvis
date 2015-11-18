@@ -1,6 +1,9 @@
 /*! nam-web - v0.0.0 - 2015-11-18 */
 
-namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function ($scope, $log, $timeout, $http) {
+namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", function ($scope, $log, $timeout, $http, $sce) {
+    $scope.trustAsHtml = function(string) {
+        return $sce.trustAsHtml(string);
+    };
 
 
   	$scope.title 		= " MASSVIS Dataset"
@@ -12,17 +15,27 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
 
 
     $scope.aboutDetails = [
-      ["1 detailed taxonomy for classifying visualizations", "taxonomy.png"],
-      ["10s of eye-tracking lab participants", "10s-of-people.png"],
-      ["100s of labeled visualizations","100s-labeled-viz.png"],
-      ["100s of memorability scores","100s-mem-scores.png"],
-      ["100s of participants on Amazon’s Mechanical Turk","100s-of-people.png"],
-      ['1000s of visualizations "in-the-wild"',"1000s-visualization.png"],
-      ['1000s of manual annotations',"1000s-annotations.png"],
-      ['1000s of polygonal labels on visualizations',"100s-labeled-viz.png"],
-      ['1000s of text descriptions',"1000s-text-desc.png"],
-      ['10,000s of eye fixations', "1000s-eyetracking.png"]
+      [["1 detailed taxonomy for classifying visualizations", "taxonomy.png"],
+      ["10s of eye-tracking lab participants", "10s-of-people.png"]],
+
+      [["100s of labeled visualizations","100s-labeled-viz.png"],
+      ["100s of memorability scores","100s-mem-scores.png"]],
+
+      [["100s of participants on Amazon’s Mechanical Turk","100s-of-people.png"],
+      ['1000s of visualizations "in-the-wild"',"1000s-visualization.png"]],
+
+      [['1000s of manual annotations',"1000s-annotations.png"],
+      ['1000s of polygonal labels on visualizations',"100s-labeled-viz.png"]],
+
+      [['1000s of text descriptions',"1000s-text-desc.png"],
+      ['10,000s of eye fixations', "1000s-eyetracking.png"]]
     ]
+    // $scope.aboutTaxonomy = {
+    //     desc: "In order to address the variety of visualization types in the MassVis database, we created a taxonomy for static (i.e., non-interactive) visualizations. The taxonomy classifies static visualizations according to the underlying data structures, the visual encoding of the data, and the perceptual tasks enabled by these encodings. It contains twelve visualization categories and several popular subtypes for each category. In addition, we supply a set of properties that aid in the characterization of the visualizations. This taxonomy was created originally to classify the 2k dataset, and we continue to use this terminology in our papers.",
+    //     bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
+    //
+    // }
+    //
     $scope.acknowledgement = "This work has been supported in part by the National Science Foundation (NSF) under grant 1016862, MIT Big Data Initiative at CSAIL, Google, and Xerox awards to Aude Oliva. This work has also been made possible through support from the Department of Defense through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program, the NSF Graduate Research Fellowship Program, the Natural Sciences and Engineering Research Council of Canada Postgraduate Doctoral Scholarship (NSERC PGS-D), and the Kwanjeong Educational Foundation."
   	$scope.journalPapers = [
       {
@@ -31,7 +44,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         supplement: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-supplementalmaterial-camera.pdf",
         video: "http://vcg.seas.harvard.edu/files/pfister/files/infovis-251_teaser.mp4",
         bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/534661",
-        authors: "Borkin, M.,  Bylinskii, Z., Kim, N.W., Bainbridge C.M., Yeh, C.S., Borkin, D., Pfister, H., & Oliva, A.",
+        authors: "Borkin, M.<sup>*</sup>,  Bylinskii, Z.<sup>*</sup>, Kim, N.W., Bainbridge C.M., Yeh, C.S., Borkin, D., Pfister, H., & Oliva, A.",
         source: "IEEE Transactions on Visualization and Computer Graphics (Proceedings of InfoVis 2015)"
       },
       {
@@ -47,12 +60,20 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
       ]
     $scope.otherPapers = [
       {
+        title: "Eye Fixation Metrics for Large Scale Analysis of Information Visualizations",
+        link: "http://web.mit.edu/zoya/www/Bylinskii_eyefixations_small.pdf",
+        slides:"http://web.mit.edu/zoya/www/ETVIS_red.pdf",
+        //bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
+        authors: "Bylinskii, Z., & Borkin, M.",
+        source: "First Workshop on Eyetracking and Visualizations (ETVIS 2015) in conjunction with IEEE VIS 2015"
+      },
+      {
         title: "A Crowdsourced Alternative to Eye-tracking for Visualization Understanding",
         link: "http://namwkim.org/files/CHI2015-WIP-Bubble.pdf",
         slides:"http://namwkim.org/files/CHI2015-WIP-Bubble-Poster.pdf",
         bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
         authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Oliva, A., Gajos, K.Z., & Pfister, H.",
-        site: "https://study.namwkim.org/bubble/admin",
+        site: "https://study.namwkim.org/bubble/eval",
         source: "Proceedings of the ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA '15)"
       }
       ]
@@ -103,13 +124,14 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
 
       $scope.eyeTitle = "Eye-movement Data";
       $scope.eyeDesc = "We have eye-movement data for a total of 393 visualizations and 33 viewers, with an average of 16 viewers per visualization. Each viewer looked at each visualization for 10 seconds, generating an average of 37 fixation points. This is a total of about 600 fixation points per visualization across all viewers. We store the (x,y) location of each fixation on a visualization, the time-point when the fixation occurred during the viewing period, and the duration (in ms) of each fixation. We provide tools for visualizing the fixation sequences, fixation durations, and fixation heatmaps on top of visualizations."
-
+      $scope.eyeData = "https://github.com/massvis/eyetracking";
+      $scope.eyeCode = "https://github.com/massvis/eyetracking/tree/master/matlab_files/visualizationCode";
 
       $scope.datasets = [
         {
           name: "all5k",
           size: "(~2.42G)",
-          desc: "This data contains 5,693 single- and multi-panel visualizations scraped from the web from seven different online sources making up a total of four different source categories (government and world organizations, news media, infographics, and scientific publications). We provide the original visualizations, original URLs, source and category labels, as well as whether each visualization is single or multi-panel. This data is described in “What makes a visualization memorable?” (InfoVis 2013).",
+          desc: "This data contains 5,814 single- and multi-panel visualizations scraped from the web from seven different online sources making up a total of four different source categories (government and world organizations, news media, infographics, and scientific publications). We provide the original visualizations, original URLs, source and category labels, as well as whether each visualization is single or multi-panel. This data is described in “What makes a visualization memorable?” (InfoVis 2013).",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
@@ -127,8 +149,8 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         {
           name: "targets393",
           size: "(~160M)",
-          desc: "This data contains taxonomic labels and attributes for 393 visualizations. These include the source, category, and type of each visualization, as well as the following attributes: data-ink ratio, number of distinctive colors, black & white, visual density, human recognizable object (HRO), and human depiction. We also provide the transcribed title for each visualization and where the title was located on the visualization, as well as whether the visualization contained data or message redundancy. From we include at-a-glance memorability scores (after 1 second of viewing) and from we include prolonged memorability scores (after 10 seconds of viewing).",
-          bibtex: ""
+          desc: "This data contains taxonomic labels and attributes for 393 visualizations. These include the source, category, and type of each visualization, as well as the following attributes: data-ink ratio, number of distinctive colors, black & white, visual density, human recognizable object (HRO), and human depiction. We also provide the transcribed title for each visualization and where the title was located on the visualization, as well as whether the visualization contained data or message redundancy. From Borkin et al. 2013 we include at-a-glance memorability scores (after 1 second of viewing) and from Borkin, Bylinskii et al. 2015 we include prolonged memorability scores (after 10 seconds of viewing). As described in “Beyond Memorability: Visualization Recognition and Recall“ (InfoVis 2015), we provide participant's eye movements and textual descriptions.",
+          bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/534661"
         }
       ];
       $scope.password = "";

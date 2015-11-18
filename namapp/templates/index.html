@@ -82,8 +82,8 @@
 			<div class="col-lg-8 col-lg-offset-2 text-center">
 				<h2 class="section-heading">About</h2>
 				<hr class="light">
-				<div class="row" >
-					<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12" ng-repeat="item in aboutDetails">
+				<div class="row" ng-repeat="twoItems in aboutDetails" >
+					<div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="item in twoItems">
 						<div class="media" style="padding-bottom:10px">
 						  <div class="media-left">
 								<img width="100" ng-src="index.fcgi/img/icons/<% item[1] %>" alt="<% item[1] %>"  class="media-object img-rounded">
@@ -99,6 +99,20 @@
 					</div> -->
 				</div>
 				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h3>Visualization Taxonomy</h3>
+				<p>
+					In order to address the variety of visualization types in the MassVis database, we created a taxonomy for static (i.e., non-interactive) visualizations.
+					The taxonomy classifies static visualizations according to the underlying data structures, the visual encoding of the data, and the perceptual tasks enabled by these encodings.
+					It contains twelve visualization categories and several popular subtypes for each category.  In addition, we supply a set of properties that aid in the characterization of the visualizations.
+					This taxonomy was created originally to classify the <a href="#data" class="text-faded">2k dataset</a>, and we continue to use this terminology in our <a href="#papers" class="text-faded">papers</a>.
+					For more information about the taxonomy, please read this document: <a target="_blank" href="http://vcg.seas.harvard.edu/files/pfister/files/viztaxonomy2013.pdf?m=1446128130" class="text-faded">taxonomy details</a>
+				</p>
+
+				<div>If you use this taxonomy, please cite this paper: <i class="fa fa-file-code-o fa-lg" ></i><a href="http://vcg.seas.harvard.edu/publications/export/bibtex/83476" class="text-faded"> Bibtex</a></div>
 			</div>
 		</div>
 	</div>
@@ -119,10 +133,8 @@
 				<!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
 				<div >
 					<h3><i class="fa fa-bookmark-o"></i> <%paper.title%></h3>
-					<p class="text-muted">
-						<%paper.authors%><br>
-						<%paper.source%><br>
-					</p>
+					<p class="text-muted" style="margin:0px" ng-bind-html="trustAsHtml(paper.authors)"></p>
+					<p class="text-muted"> <%paper.source%></p>
 					<div>
 						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>"> Paper</a>
 						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.supplement"></i><a ng-if="paper.supplement" href="<%paper.supplement%>"> Supplement</a>
@@ -151,10 +163,10 @@
 				<!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
 				<div >
 					<h3><i class="fa fa-bookmark-o"></i> <%paper.title%></h3>
-					<p class="text-muted">
-						<%paper.authors%><br>
-						<%paper.source%><br>
-					</p>
+					<!-- <p ng-bind-html="trustAsHtml(paper.authors)"> -->
+						<p class="text-muted" style="margin:0px" ng-bind-html="trustAsHtml(paper.authors)"></p>
+						<p class="text-muted"> <%paper.source%></p>
+					<!-- </p> -->
 					<div>
 						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>"> Paper</a>
 						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.supplement"></i><a ng-if="paper.supplement" href="<%paper.supplement%>"> Supplement</a>
