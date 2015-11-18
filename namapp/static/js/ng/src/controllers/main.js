@@ -114,7 +114,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", function (
         {
           name: "single2k",
           size: "(~625M)",
-          desc: "This data contains a subset of the visualizations in all5k, limited to only single-panel, stand-alone visualizations (a total of 2,070 visualizations). We provide the original visualizations, original URLs, source and category labels, visualization type, and a label indicating the presence/absence of pictorial element(s). The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
+          desc: "This data contains a subset of the visualizations from all5k, limited to only single-panel, stand-alone visualizations (a total of 2,068 visualizations). We provide the original URLs, source and category labels, and visualization type. The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {
