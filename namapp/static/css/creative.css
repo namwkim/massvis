@@ -495,7 +495,7 @@ body {
   -o-background-size: cover;
 }
 #eyetracking .container{
-    width: :100%;
+    width: :100% !important;
     margin: 0px 0px;
     padding: 115px;
     background-color: rgba(0,0,0,.6);
