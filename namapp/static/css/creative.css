@@ -492,10 +492,7 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  background-color: rgba(0,0,0,.5);
 }
-#eyetracking-content{
-    padding:15px;
+#eyetracking .container{
     background-color: rgba(0,0,0,.5);
-    border: 0px;
 }
