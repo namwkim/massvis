@@ -494,7 +494,7 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
-#eyetracking .transbox{
+.transbox{
     width: :100% !important;
     margin: 0px 0px;
     padding: 115px;
