@@ -496,7 +496,7 @@ body {
 }
 #eyetracking .container{
     width: :100%;
-    margin: 0px;
+    margin: 0px 0px;
     padding: 115px;
     background-color: rgba(0,0,0,.7);
 }
