@@ -42,6 +42,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         link: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-camera.pdf",
         supplement: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-supplementalmaterial-camera.pdf",
         video: "http://vcg.seas.harvard.edu/files/pfister/files/infovis-251_teaser.mp4",
+        slides:"http://vcg.seas.harvard.edu/files/pfister/files/infovis-2015_final.pdf",
         bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/534661",
         authors: "Borkin, M.<sup>*</sup>,  Bylinskii, Z.<sup>*</sup>, Kim, N.W., Bainbridge C.M., Yeh, C.S., Borkin, D., Pfister, H., & Oliva, A.",
         source: "IEEE Transactions on Visualization and Computer Graphics (Proceedings of InfoVis 2015)"

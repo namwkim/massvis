@@ -472,6 +472,7 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #222;
 }
+
 #taxonomy{
   width:100%;
   padding: 0px;
@@ -483,13 +484,6 @@ body {
   -o-background-size: cover;
 }
 
-#taxonomy .transbox{
-    color:white;
-    width: :100% !important;
-    margin: 0px 0px;
-    padding: 115px;
-    background-color: rgba(0,0,0,.75);
-}
 #eyetracking{
   width:100%;
   padding: 0px;
@@ -500,10 +494,33 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+#taxonomy .transbox{
+    color:white;
+    width: :100% !important;
+    margin: 0px 0px;
+    padding: 100px 0px;
+    background-color: rgba(0,0,0,.75);
+}
 #eyetracking .transbox{
     color:white;
     width: :100% !important;
     margin: 0px 0px;
-    padding: 115px;
+    padding: 100px 0px;
     background-color: rgba(0,0,0,.6);
+}
+@media(min-width:768px) {
+    #taxonomy .transbox{
+        color:white;
+        width: :100% !important;
+        margin: 0px 0px;
+        padding: 100px;
+        background-color: rgba(0,0,0,.75);
+    }
+    #eyetracking .transbox{
+        color:white;
+        width: :100% !important;
+        margin: 0px 0px;
+        padding: 100px;
+        background-color: rgba(0,0,0,.6);
+    }
 }
