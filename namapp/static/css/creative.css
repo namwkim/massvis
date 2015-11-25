@@ -486,7 +486,6 @@ body {
 }
 #eyetracking{
   width:100%;
-  padding: 0px;
   background-image: url(../img/eyetracking.png);
   background-position: center;
   -webkit-background-size: cover;
