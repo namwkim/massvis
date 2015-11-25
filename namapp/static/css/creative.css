@@ -495,7 +495,6 @@ body {
 }
 #eyetracking-content{
     padding:10px;
-    background-color: black;
-    border: 1px solid gray;
-    opacity: 0.6;
+    background-color: rgba(0,0,0,.5);
+    border: 0px;
 }
