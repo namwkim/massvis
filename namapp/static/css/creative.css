@@ -493,3 +493,9 @@ body {
   background-size: cover;
   -o-background-size: cover;
 }
+#eyetracking-content{
+    padding:10px;
+    background-color: black;
+    border: 1px solid gray;
+    opacity: 0.6;
+}
