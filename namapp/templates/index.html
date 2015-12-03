@@ -105,27 +105,28 @@
 				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
 			</div>
 		</div>
+		<h4 class="section-heading">Visualization Source</h4>
 		<div class="row" style="margin-top:20px">
 			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h4 class="text-faded">Government</h4>
+				<h5 class="text-faded">Government</h5>
 				<img width="100%" src="index.fcgi/img/government.png" class="img-rounded">
 			</div>
 		</div>
 		<div class="row" style="margin-top:20px">
 			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h4 class="text-faded">Infographic</h4>
+				<h5 class="text-faded">Infographic</h5>
 				<img width="100%" src="index.fcgi/img/infographic.png" class="img-rounded">
 			</div>
 		</div>
 		<div class="row" style="margin-top:20px">
 			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h4 class="text-faded">News</h4>
+				<h5 class="text-faded">News</h5>
 				<img width="100%" src="index.fcgi/img/news.png" class="img-rounded">
 			</div>
 		</div>
 		<div class="row" style="margin-top:20px">
 			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h4 class="text-faded">Science</h4>
+				<h5 class="text-faded">Science</h5>
 				<img width="100%" src="index.fcgi/img/science.png" class="img-rounded">
 			</div>
 		</div>
@@ -150,7 +151,25 @@
 		</div>
 	</div>
 </section>
+<section id="eyetracking">
+	<div class="transbox">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading"><% eyeTitle %></h2>
+				<hr class="light">
+				<p class="text-faded"><% eyeDesc %></p>
+				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
+				<div>
+					<i class="fa fa-database fa-lg"></i><a target="_blank" href="https://github.com/massvis/eyetracking"> <strong>Data</strong></a>
 
+					<span style="padding-left:10px">
+
+					<i class="fa fa-file-code-o fa-lg"></i><a target="_blank" href="https://github.com/massvis/eyetracking/tree/master/matlab_files/" class="text-danger"> <strong>Code</strong></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 <section id="papers">
 	<div class="container">
 		<div class="row">
@@ -208,25 +227,6 @@
 						<i class="fa fa-file-code-o fa-lg" ng-if="paper.bibtex"></i><a ng-if="paper.bibtex" href="<%paper.bibtex%>"> Bibtex</a>
 						<i class="fa fa-globe fa-lg" ng-if="paper.site"></i><a ng-if="paper.site" href="<%paper.site%>"> Website</a>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="eyetracking">
-	<div class="transbox">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2 class="section-heading"><% eyeTitle %></h2>
-				<hr class="light">
-				<p class="text-faded"><% eyeDesc %></p>
-				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
-				<div>
-					<i class="fa fa-database fa-lg"></i><a target="_blank" href="https://github.com/massvis/eyetracking"> <strong>Data</strong></a> 
-
-					<span style="padding-left:10px">
-
-					<i class="fa fa-file-code-o fa-lg"></i><a target="_blank" href="https://github.com/massvis/eyetracking/tree/master/matlab_files/" class="text-danger"> <strong>Code</strong></a>
 				</div>
 			</div>
 		</div>
