@@ -54,7 +54,9 @@ p {
 .bg-primary {
     background-color: #A51C30;
 }
-
+.bg-neutral {
+    background-color: #D28D97;
+}
 .bg-dark {
     color: #fff;
     background-color: #222;
