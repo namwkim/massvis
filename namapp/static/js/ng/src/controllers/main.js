@@ -189,8 +189,15 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         // request data
         var requested = [];
         $scope.datasets.forEach(function(d){
-          if ($("#"+d.name).prop('checked'))
-            requested.push(d.name);
+          if ($("#"+d.name).prop('checked')){
+            if (f=="all5k"){
+              requested.push("part1");
+              requested.push("part2");
+            }else{
+              requested.push(d.name);  
+            }
+          }
+            
           $log.log(d.name + ", " + $("#"+d.name).prop('checked'));
         })
         if (requested.length==0) {
