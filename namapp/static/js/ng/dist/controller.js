@@ -192,8 +192,8 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         $scope.datasets.forEach(function(d){
           if ($("#"+d.name).prop('checked')){
             if (d.name=="all5k"){
-              requested.push("part1");
-              requested.push("part2");
+              requested.push("all5k-part1");
+              requested.push("all5k-part2");
             }else{
               requested.push(d.name);  
             }
