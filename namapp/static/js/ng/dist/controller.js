@@ -236,8 +236,8 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
               dataLinks = []
               requested.forEach(function(f){
                 if (f=="all5k"){
-                  dataLinks.push({link: "part1.zip", pw: $scope.password});  
-                  dataLinks.push({link: "part2.zip", pw: $scope.password});  
+                  dataLinks.push({link: "all5k-part1.zip", pw: $scope.password});  
+                  dataLinks.push({link: "all5k-part2.zip", pw: $scope.password});  
                 }else{
                   dataLinks.push({link: (f+".zip"), pw: $scope.password});  
                 }
