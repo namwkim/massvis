@@ -1,4 +1,4 @@
-/*! nam-web - v0.0.0 - 2015-10-29 */
+/*! nam-web - v0.0.0 - 2015-12-24 */
 
 namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", function ($scope, $log, $timeout, $http, $sce) {
     $scope.trustAsHtml = function(string) {
@@ -30,6 +30,12 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
       [['1000s of text descriptions',"1000s-text-desc.png"],
       ['10,000s of eye fixations', "1000s-eyetracking.png"]]
     ]
+    // $scope.aboutTaxonomy = {
+    //     desc: "In order to address the variety of visualization types in the MassVis database, we created a taxonomy for static (i.e., non-interactive) visualizations. The taxonomy classifies static visualizations according to the underlying data structures, the visual encoding of the data, and the perceptual tasks enabled by these encodings. It contains twelve visualization categories and several popular subtypes for each category. In addition, we supply a set of properties that aid in the characterization of the visualizations. This taxonomy was created originally to classify the 2k dataset, and we continue to use this terminology in our papers.",
+    //     bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
+    //
+    // }
+    //
     $scope.acknowledgement = "This work has been supported in part by the National Science Foundation (NSF) under grant 1016862, MIT Big Data Initiative at CSAIL, Google, and Xerox awards to Aude Oliva. This work has also been made possible through support from the Department of Defense through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program, the NSF Graduate Research Fellowship Program, the Natural Sciences and Engineering Research Council of Canada Postgraduate Doctoral Scholarship (NSERC PGS-D), and the Kwanjeong Educational Foundation."
   	$scope.journalPapers = [
       {
@@ -221,7 +227,13 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
               $log.log("PASSWORD:" + $scope.password)
               dataLinks = []
               requested.forEach(function(f){
-                dataLinks.push({link: (f+".zip"), pw: $scope.password});
+                if (f=="all5k"){
+                  dataLinks.push({link: "part1.zip", pw: $scope.password});  
+                  dataLinks.push({link: "part2.zip", pw: $scope.password});  
+                }else{
+                  dataLinks.push({link: (f+".zip"), pw: $scope.password});  
+                }
+                
               })
               $log.log(dataLinks);
               $scope.dataLinks = dataLinks;
