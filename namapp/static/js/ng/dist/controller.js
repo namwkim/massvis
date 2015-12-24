@@ -43,6 +43,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         link: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-camera.pdf",
         supplement: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-supplementalmaterial-camera.pdf",
         video: "http://vcg.seas.harvard.edu/files/pfister/files/infovis-251_teaser.mp4",
+        slides:"http://vcg.seas.harvard.edu/files/pfister/files/infovis-2015_final.pdf",
         bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/534661",
         authors: "Borkin, M.<sup>*</sup>,  Bylinskii, Z.<sup>*</sup>, Kim, N.W., Bainbridge C.M., Yeh, C.S., Borkin, D., Pfister, H., & Oliva, A.",
         source: "IEEE Transactions on Visualization and Computer Graphics (Proceedings of InfoVis 2015)"
@@ -137,7 +138,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         {
           name: "single2k",
           size: "(~625M)",
-          desc: "This data contains a subset of the visualizations in all5k, limited to only single-panel, stand-alone visualizations (a total of 2,068 visualizations). We provide the original visualizations, original URLs, source and category labels, visualization type, and a label indicating the presence/absence of pictorial element(s). The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
+          desc: "This data contains a subset of the visualizations from all5k, limited to only single-panel, stand-alone visualizations (a total of 2,068 visualizations). We provide the original URLs, source and category labels, and visualization type. The taxonomy used to classify the visualization type is described in “What makes a visualization memorable?” (InfoVis 2013).",
           bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/83476"
         },
         {

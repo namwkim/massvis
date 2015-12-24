@@ -54,7 +54,9 @@ p {
 .bg-primary {
     background-color: #A51C30;
 }
-
+.bg-neutral {
+    background-color: #D28D97;
+}
 .bg-dark {
     color: #fff;
     background-color: #222;
@@ -473,12 +475,54 @@ body {
     webkit-tap-highlight-color: #222;
 }
 
+#taxonomy{
+  width:100%;
+  padding: 0px;
+  background-image: url(../img/taxonomy-image.png);
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 #eyetracking{
   width:100%;
+  padding: 0px;
   background-image: url(../img/eyetracking.png);
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+}
+#taxonomy .transbox{
+    color:white;
+    width: :100% !important;
+    margin: 0px 0px;
+    padding: 100px 10px;
+    background-color: rgba(0,0,0,.75);
+}
+#eyetracking .transbox{
+    color:white;
+    width: :100% !important;
+    margin: 0px 0px;
+    padding: 100px 10px;
+    background-color: rgba(0,0,0,.6);
+}
+@media(min-width:768px) {
+    #taxonomy .transbox{
+        color:white;
+        width: :100% !important;
+        margin: 0px 0px;
+        padding: 100px;
+        background-color: rgba(0,0,0,.75);
+    }
+    #eyetracking .transbox{
+        color:white;
+        width: :100% !important;
+        margin: 0px 0px;
+        padding: 100px;
+        background-color: rgba(0,0,0,.6);
+    }
 }
