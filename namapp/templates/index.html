@@ -27,10 +27,16 @@
 					<a class="page-scroll" href="#details">About</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#papers">Papers</a>
+					<a class="page-scroll" href="#taxonomy">Taxonomy</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#sources">Sources</a>
 				</li>
 				<li>
 					<a class="page-scroll" href="#eyetracking">Eye-tracking</a>
+				</li>
+				<li>
+					<a class="page-scroll" href="#papers">Papers</a>
 				</li>
 				<li>
 					<a class="page-scroll" href="#team">Team</a>
@@ -82,7 +88,6 @@
 			<div class="col-lg-8 col-lg-offset-2 text-center">
 				<h2 class="section-heading">About</h2>
 				<hr class="light">
-
 				<div class="row" ng-repeat="twoItems in aboutDetails" >
 					<div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="item in twoItems">
 						<div class="media" style="padding-bottom:10px">
@@ -102,23 +107,75 @@
 				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
 			</div>
 		</div>
+</section>
+<section id="taxonomy">
+	<div class="transbox">
 		<div class="row">
 			<div class="col-lg-12 text-center">
-				<h3>Visualization Taxonomy</h3>
-				<p>
+				<h2 class="section-heading">Visualization Taxonomy</h2>
+				<hr class="light">
+				<p class="text-faded">
 					In order to address the variety of visualization types in the MassVis database, we created a taxonomy for static (i.e., non-interactive) visualizations.
 					The taxonomy classifies static visualizations according to the underlying data structures, the visual encoding of the data, and the perceptual tasks enabled by these encodings.
 					It contains twelve visualization categories and several popular subtypes for each category.  In addition, we supply a set of properties that aid in the characterization of the visualizations.
-					This taxonomy was created originally to classify the <a href="#data" class="text-faded">2k dataset</a>, and we continue to use this terminology in our <a href="#papers" class="text-faded">papers</a>.
-					For more information about the taxonomy, please read this document: <a target="_blank" href="http://vcg.seas.harvard.edu/files/pfister/files/viztaxonomy2013.pdf?m=1446128130" class="text-faded">taxonomy details</a>
+					This taxonomy was created originally to classify the <a href="#data" >2k dataset</a>, and we continue to use this terminology in our <a href="#papers" >papers</a>.
+					For more information about the taxonomy, please read this document: <a target="_blank" href="http://vcg.seas.harvard.edu/files/pfister/files/viztaxonomy2013.pdf?m=1446128130">taxonomy details</a>
 				</p>
 
-				<div>If you use this taxonomy, please cite this paper: <i class="fa fa-file-code-o fa-lg" ></i><a href="http://vcg.seas.harvard.edu/publications/export/bibtex/83476" class="text-faded"> Bibtex</a></div>
+				<div>If you use this taxonomy, please cite this paper: <i class="fa fa-file-code-o fa-lg" ></i><a href="http://vcg.seas.harvard.edu/publications/export/bibtex/83476" class="text-danger"> Bibtex</a></div>
 			</div>
 		</div>
 	</div>
 </section>
+<section id="sources">
+	<div class="container">
+		<div class="row" style="margin-top:20px">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2 class="section-heading">Visualization Sources</h2>
+				<hr class="primary">
+				<h3><i class="fa fa-university"></i> Government</h3>
+				<img width="100%" src="index.fcgi/img/government.png" class="img-rounded">
+			</div>
+		</div>
+		<div class="row" style="margin-top:20px">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h3><i class="fa fa-pie-chart"></i> Infographic</h3>
+				<img width="100%" src="index.fcgi/img/infographic.png" class="img-rounded">
+			</div>
+		</div>
+		<div class="row" style="margin-top:20px">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h3><i class="fa fa-newspaper-o"></i> News</h3>
+				<img width="100%" src="index.fcgi/img/news.png" class="img-rounded">
+			</div>
+		</div>
+		<div class="row" style="margin-top:20px">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h3><i class="fa fa-flask"></i> Science</h3>
+				<img width="100%" src="index.fcgi/img/science.png" class="img-rounded">
+			</div>
+		</div>
+	</div>
+</section>
+<section id="eyetracking">
+	<div class="transbox">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading"><% eyeTitle %></h2>
+				<hr class="light">
+				<p class="text-faded"><% eyeDesc %></p>
+				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
+				<div>
+					<i class="fa fa-database fa-lg"></i><a target="_blank" href="https://github.com/massvis/eyetracking"> <strong>Data</strong></a>
 
+					<span style="padding-left:10px">
+
+					<i class="fa fa-file-code-o fa-lg"></i><a target="_blank" href="https://github.com/massvis/eyetracking/tree/master/matlab_files/" class="text-danger"> <strong>Code</strong></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 <section id="papers">
 	<div class="container">
 		<div class="row">
@@ -177,18 +234,6 @@
 						<i class="fa fa-globe fa-lg" ng-if="paper.site"></i><a ng-if="paper.site" href="<%paper.site%>"> Website</a>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="bg-primary" id="eyetracking">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2 class="section-heading"><% eyeTitle %></h2>
-				<hr class="light">
-				<p class="text-faded"><% eyeDesc %></p>
-				<!-- <p class="text-faded"><% projectSubDesc %></p> -->
 			</div>
 		</div>
 	</div>
