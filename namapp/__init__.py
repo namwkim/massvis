@@ -22,7 +22,7 @@ def index():
 
 @app.route('/bubbleview')
 def bubbleview():
-    return render_template("bubbleview.html")
+    return redirect('https://github.com/namwkim/bubbleview')
 # if __name__ == '__main__':
 #     app.run(debug=True, host='0.0.0.0', port='6353') # app.debug = True  : this will reload server on code changes
 
