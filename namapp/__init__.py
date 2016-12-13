@@ -19,9 +19,9 @@ datasets = [ "all5k", "single2k", "targets410", "targets393"]
 @app.route('/')
 def index():
     return render_template("index.html")
-    
+
 @app.route('/bubbleview')
-def index():
+def bubbleview():
     return render_template("bubbleview.html")
 # if __name__ == '__main__':
 #     app.run(debug=True, host='0.0.0.0', port='6353') # app.debug = True  : this will reload server on code changes
