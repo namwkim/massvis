@@ -180,6 +180,34 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
+				<h2 class="section-heading">Book Chapters</h2>
+				<hr class="primary">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row" ng-repeat="paper in bookChapters" style="margin-bottom:15px">
+			<div class="col-md-12 text-center">
+				<!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
+				<div >
+					<h3><i class="fa fa-bookmark-o"></i> <%paper.title%></h3>
+					<p class="text-muted" style="margin:0px" ng-bind-html="trustAsHtml(paper.authors)"></p>
+					<p class="text-muted"> <%paper.source%></p>
+					<div>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>" target="_blank"> Paper</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.supplement"></i><a ng-if="paper.supplement" href="<%paper.supplement%>" target="_blank"> Supplement</a>
+						<i class="fa fa-film fa-lg" ng-if="paper.video"></i><a ng-if="paper.video" href="<%paper.video%>" target="_blank"> Video</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.slides"></i><a ng-if="paper.slides" href="<%paper.slides%>" target="_blank"> Slides</a>
+						<i class="fa fa-file-code-o fa-lg" ng-if="paper.bibtex"></i><a ng-if="paper.bibtex" href="<%paper.bibtex%>" target="_blank"> Bibtex</a>
+						<i class="fa fa-globe fa-lg" ng-if="paper.site"></i><a ng-if="paper.site" href="<%paper.site%>" target="_blank"> Website</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
 				<h2 class="section-heading">Journal Papers</h2>
 				<hr class="primary">
 			</div>
@@ -194,12 +222,12 @@
 					<p class="text-muted" style="margin:0px" ng-bind-html="trustAsHtml(paper.authors)"></p>
 					<p class="text-muted"> <%paper.source%></p>
 					<div>
-						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>"> Paper</a>
-						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.supplement"></i><a ng-if="paper.supplement" href="<%paper.supplement%>"> Supplement</a>
-						<i class="fa fa-film fa-lg" ng-if="paper.video"></i><a ng-if="paper.video" href="<%paper.video%>"> Video</a>
-						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.slides"></i><a ng-if="paper.slides" href="<%paper.slides%>"> Slides</a>
-						<i class="fa fa-file-code-o fa-lg" ng-if="paper.bibtex"></i><a ng-if="paper.bibtex" href="<%paper.bibtex%>"> Bibtex</a>
-						<i class="fa fa-globe fa-lg" ng-if="paper.site"></i><a ng-if="paper.site" href="<%paper.site%>"> Website</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>" target="_blank"> Paper</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.supplement"></i><a ng-if="paper.supplement" href="<%paper.supplement%>" target="_blank"> Supplement</a>
+						<i class="fa fa-film fa-lg" ng-if="paper.video"></i><a ng-if="paper.video" href="<%paper.video%>" target="_blank"> Video</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.slides"></i><a ng-if="paper.slides" href="<%paper.slides%>" target="_blank"> Slides</a>
+						<i class="fa fa-file-code-o fa-lg" ng-if="paper.bibtex"></i><a ng-if="paper.bibtex" href="<%paper.bibtex%>" target="_blank"> Bibtex</a>
+						<i class="fa fa-globe fa-lg" ng-if="paper.site"></i><a ng-if="paper.site" href="<%paper.site%>" target="_blank"> Website</a>
 					</div>
 				</div>
 			</div>
@@ -226,12 +254,43 @@
 						<p class="text-muted"> <%paper.source%></p>
 					<!-- </p> -->
 					<div>
-						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>"> Paper</a>
-						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.supplement"></i><a ng-if="paper.supplement" href="<%paper.supplement%>"> Supplement</a>
-						<i class="fa fa-film fa-lg" ng-if="paper.video"></i><a ng-if="paper.video" href="<%paper.video%>"> Video</a>
-						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.slides"></i><a ng-if="paper.slides" href="<%paper.slides%>"> Slides</a>
-						<i class="fa fa-file-code-o fa-lg" ng-if="paper.bibtex"></i><a ng-if="paper.bibtex" href="<%paper.bibtex%>"> Bibtex</a>
-						<i class="fa fa-globe fa-lg" ng-if="paper.site"></i><a ng-if="paper.site" href="<%paper.site%>"> Website</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>" target="_blank"> Paper</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.supplement"></i><a ng-if="paper.supplement" href="<%paper.supplement%>" target="_blank"> Supplement</a>
+						<i class="fa fa-film fa-lg" ng-if="paper.video"></i><a ng-if="paper.video" href="<%paper.video%>" target="_blank"> Video</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.slides"></i><a ng-if="paper.slides" href="<%paper.slides%>" target="_blank"> Slides</a>
+						<i class="fa fa-file-code-o fa-lg" ng-if="paper.bibtex"></i><a ng-if="paper.bibtex" href="<%paper.bibtex%>" target="_blank"> Bibtex</a>
+						<i class="fa fa-globe fa-lg" ng-if="paper.site"></i><a ng-if="paper.site" href="<%paper.site%>" target="_blank"> Website</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="section-heading">Tech Report</h2>
+				<hr class="primary">
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row" ng-repeat="paper in techReports" style="margin-bottom:15px">
+			<div class="col-md-12 text-center">
+				<!-- <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i> -->
+				<div >
+					<h3><i class="fa fa-bookmark-o"></i> <%paper.title%></h3>
+					<!-- <p ng-bind-html="trustAsHtml(paper.authors)"> -->
+						<p class="text-muted" style="margin:0px" ng-bind-html="trustAsHtml(paper.authors)"></p>
+						<p class="text-muted"> <%paper.source%></p>
+					<!-- </p> -->
+					<div>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.link"></i><a ng-if="paper.link" href="<%paper.link%>" target="_blank"> Paper</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.supplement"></i><a ng-if="paper.supplement" href="<%paper.supplement%>" target="_blank"> Supplement</a>
+						<i class="fa fa-film fa-lg" ng-if="paper.video"></i><a ng-if="paper.video" href="<%paper.video%>" target="_blank"> Video</a>
+						<i class="fa fa-file-pdf-o fa-lg" ng-if="paper.slides"></i><a ng-if="paper.slides" href="<%paper.slides%>" target="_blank"> Slides</a>
+						<i class="fa fa-file-code-o fa-lg" ng-if="paper.bibtex"></i><a ng-if="paper.bibtex" href="<%paper.bibtex%>" target="_blank"> Bibtex</a>
+						<i class="fa fa-globe fa-lg" ng-if="paper.site"></i><a ng-if="paper.site" href="<%paper.site%>" target="_blank"> Website</a>
 					</div>
 				</div>
 			</div>

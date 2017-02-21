@@ -36,6 +36,15 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
     // }
     //
     $scope.acknowledgement = "This work has been supported in part by the National Science Foundation (NSF) under grant 1016862, MIT Big Data Initiative at CSAIL, Google, and Xerox awards to Aude Oliva. This work has also been made possible through support from the Department of Defense through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program, the NSF Graduate Research Fellowship Program, the Natural Sciences and Engineering Research Council of Canada Postgraduate Doctoral Scholarship (NSERC PGS-D), and the Kwanjeong Educational Foundation."
+    $scope.bookChapters = [
+      {
+        title: "Eye Fixation Metrics for Large Scale Evaluation and Comparison of Information Visualizations",
+        link: "http://link.springer.com/chapter/10.1007/978-3-319-47024-5_14",
+        bibtex: "http://citation-needed.services.springer.com/v2/references/10.1007/978-3-319-47024-5_14?format=bibtex&flavour=citation",
+        authors: "Bylinskii, Z., Borkin, M. A., Kim, N. W., Pfister, H., and Oliva, A.",
+        source: "In Burch, M., Chuang, L., Fisher, B., Schmidt, A., Weiskopf, D. (Eds.), Eye Tracking and Visualization: Foundations, Techniques, and Applications (pp. 235-255). Springer International Publishing"
+      }
+      ]
   	$scope.journalPapers = [
       {
         title: "Beyond Memorability: Visualization Recognition and Recall",
@@ -75,6 +84,15 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Oliva, A., Gajos, K.Z., & Pfister, H.",
         site: "https://study.namwkim.org/bubble/eval",
         source: "Proceedings of the ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA '15)"
+      }
+      ]
+    $scope.techReports = [
+      {
+        title: "BubbleView: an alternative to eye-tracking for crowdsourcing image importance",
+        link: "https://arxiv.org/pdf/1702.05150",
+        website:"https://namwkim.github.io/bubbleview/",
+        authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
+        source: "arXiv preprint, 2017 (in submission to TOCHI)"
       }
       ]
   	$scope.members = [
