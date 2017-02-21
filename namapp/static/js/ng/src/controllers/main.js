@@ -212,10 +212,10 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
               requested.push("all5k(part1)");
               requested.push("all5k(part2)");
             }else{
-              requested.push(d.name);  
+              requested.push(d.name);
             }
           }
-            
+
           $log.log(d.name + ", " + $("#"+d.name).prop('checked'));
         })
         if (requested.length==0) {
@@ -253,12 +253,12 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
               dataLinks = []
               requested.forEach(function(f){
                 if (f=="all5k"){
-                  dataLinks.push({link: "all5k(part1).zip", pw: $scope.password});  
-                  dataLinks.push({link: "all5k(part2).zip", pw: $scope.password});  
+                  dataLinks.push({link: "all5k(part1).zip", pw: $scope.password});
+                  dataLinks.push({link: "all5k(part2).zip", pw: $scope.password});
                 }else{
-                  dataLinks.push({link: (f+".zip"), pw: $scope.password});  
+                  dataLinks.push({link: (f+".zip"), pw: $scope.password});
                 }
-                
+
               })
               $log.log(dataLinks);
               $scope.dataLinks = dataLinks;
