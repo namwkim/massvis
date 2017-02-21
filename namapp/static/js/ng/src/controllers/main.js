@@ -207,8 +207,15 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         // request data
         var requested = [];
         $scope.datasets.forEach(function(d){
-          if ($("#"+d.name).prop('checked'))
-            requested.push(d.name);
+          if ($("#"+d.name).prop('checked')){
+            if (d.name=="all5k"){
+              requested.push("all5k(part1)");
+              requested.push("all5k(part2)");
+            }else{
+              requested.push(d.name);  
+            }
+          }
+            
           $log.log(d.name + ", " + $("#"+d.name).prop('checked'));
         })
         if (requested.length==0) {
@@ -245,7 +252,13 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
               $log.log("PASSWORD:" + $scope.password)
               dataLinks = []
               requested.forEach(function(f){
-                dataLinks.push({link: (f+".zip"), pw: $scope.password});
+                if (f=="all5k"){
+                  dataLinks.push({link: "all5k(part1).zip", pw: $scope.password});  
+                  dataLinks.push({link: "all5k(part2).zip", pw: $scope.password});  
+                }else{
+                  dataLinks.push({link: (f+".zip"), pw: $scope.password});  
+                }
+                
               })
               $log.log(dataLinks);
               $scope.dataLinks = dataLinks;

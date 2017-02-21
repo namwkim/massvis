@@ -1,7 +1,7 @@
 import os
 
 
-from flask import Flask, Response, render_template, request, jsonify, logging, send_from_directory
+from flask import Flask, Response, redirect, render_template, request, jsonify, logging, send_from_directory
 from functools import wraps
 import json, csv
 from werkzeug import secure_filename
@@ -20,6 +20,9 @@ datasets = [ "all5k", "single2k", "targets410", "targets393"]
 def index():
     return render_template("index.html")
 
+@app.route('/bubbleview')
+def bubbleview():
+    return redirect('https://namwkim.github.io/bubbleview')
 # if __name__ == '__main__':
 #     app.run(debug=True, host='0.0.0.0', port='6353') # app.debug = True  : this will reload server on code changes
 
