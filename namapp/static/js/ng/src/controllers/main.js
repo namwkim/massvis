@@ -92,7 +92,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         link: "https://arxiv.org/pdf/1702.05150",
         site:"https://namwkim.github.io/bubbleview/",
         bibtex:"https://namwkim.github.io/bubbleview/",
-        authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
+        authors: "Kim, N.W.<sup>*</sup>, Bylinskii, Z.<sup>*</sup>, Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
         source: "arXiv preprint, 2017 (in submission to TOCHI)"
       }
       ]
