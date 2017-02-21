@@ -82,7 +82,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         slides:"http://namwkim.org/files/CHI2015-WIP-Bubble-Poster.pdf",
         bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
         authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Oliva, A., Gajos, K.Z., & Pfister, H.",
-        site: "https://study.namwkim.org/bubble/eval",
+        site:"https://namwkim.github.io/bubbleview/",
         source: "Proceedings of the ACM Conference Extended Abstracts on Human Factors in Computing Systems (CHI EA '15)"
       }
       ]
@@ -90,7 +90,8 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
       {
         title: "BubbleView: an alternative to eye-tracking for crowdsourcing image importance",
         link: "https://arxiv.org/pdf/1702.05150",
-        website:"https://namwkim.github.io/bubbleview/",
+        site:"https://namwkim.github.io/bubbleview/",
+        bibtex:"https://namwkim.github.io/bubbleview/",
         authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
         source: "arXiv preprint, 2017 (in submission to TOCHI)"
       }
