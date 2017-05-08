@@ -191,13 +191,17 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         $scope.datasets.forEach(function(d){
           if ($("#"+d.name).prop('checked')){
             if (d.name=="all5k"){
-              requested.push("all5k(part1)");
-              requested.push("all5k(part2)");
+              requested.push("news");
+              requested.push("science");
+              requested.push("government");
+              requested.push("vis1");
+              requested.push("vis2");
+              requested.push("vis3");
             }else{
-              requested.push(d.name);  
+              requested.push(d.name);
             }
           }
-            
+
           $log.log(d.name + ", " + $("#"+d.name).prop('checked'));
         })
         if (requested.length==0) {
@@ -235,12 +239,12 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
               dataLinks = []
               requested.forEach(function(f){
                 if (f=="all5k"){
-                  dataLinks.push({link: "all5k(part1).zip", pw: $scope.password});  
-                  dataLinks.push({link: "all5k(part2).zip", pw: $scope.password});  
+                  dataLinks.push({link: "all5k(part1).zip", pw: $scope.password});
+                  dataLinks.push({link: "all5k(part2).zip", pw: $scope.password});
                 }else{
-                  dataLinks.push({link: (f+".zip"), pw: $scope.password});  
+                  dataLinks.push({link: (f+".zip"), pw: $scope.password});
                 }
-                
+
               })
               $log.log(dataLinks);
               $scope.dataLinks = dataLinks;

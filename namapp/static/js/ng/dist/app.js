@@ -1,4 +1,4 @@
-/*! nam-web - v0.0.0 - 2015-12-24 */
+/*! nam-web - v0.0.0 - 2017-05-08 */
 
 
 var namapp = angular.module('namApp', [], function($interpolateProvider) {
