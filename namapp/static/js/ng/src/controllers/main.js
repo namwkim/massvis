@@ -93,7 +93,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         site:"https://namwkim.github.io/bubbleview/",
         bibtex:"https://namwkim.github.io/bubbleview/",
         authors: "Kim, N.W.<sup>*</sup>, Bylinskii, Z.<sup>*</sup>, Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
-        source: "arXiv preprint, 2017 (in submission to TOCHI)"
+        source: "arXiv preprint, 2017 (under minor revisions, TOCHI)"
       }
       ]
   	$scope.members = [
