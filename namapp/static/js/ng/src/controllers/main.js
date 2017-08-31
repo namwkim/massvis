@@ -88,12 +88,12 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
       ]
     $scope.techReports = [
       {
-        title: "BubbleView: an alternative to eye-tracking for crowdsourcing image importance",
+        title: "BubbleView: an interface for crowdsourcing image importance maps and tracking visual attention",
         link: "https://arxiv.org/pdf/1702.05150",
         site:"https://namwkim.github.io/bubbleview/",
         bibtex:"https://namwkim.github.io/bubbleview/",
         authors: "Kim, N.W.<sup>*</sup>, Bylinskii, Z.<sup>*</sup>, Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
-        source: "arXiv preprint, 2017 (in submission to TOCHI)"
+        source: "arXiv preprint, 2017 (accepted to TOCHI)"
       }
       ]
   	$scope.members = [
