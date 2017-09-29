@@ -44,7 +44,7 @@ module.exports = function (grunt) {
 		      src: 'namapp/static/js/ng/dist/app.js',
 		      dest: 'namapp/static/js/ng/dist/app.min.js'
 		    }
-  		},  		
+  		},
 		bower: {
 			update:{
 				options:{
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
 					cleanBowerDir: true,
 					cleanTargetDir: true
 				}
-			} 
+			}
 		},
 		watch: {
 		  scripts: {
@@ -66,9 +66,9 @@ module.exports = function (grunt) {
 		},
 	    devUpdate: {
 	        main: {
-	            options: {	               
+	            options: {
 	                packages: {
-	                    devDependencies: true//, //only check for devDependencies 
+	                    devDependencies: true//, //only check for devDependencies
 	                    // dependencies: true
 	                }
 	            }
@@ -101,7 +101,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-shell');
 
-	grunt.registerTask('build', ['devUpdate', 'bower', 'concat', 'uglify']);
+	grunt.registerTask('build', ['bower', 'concat', 'uglify']);//'devUpdate', 
 	grunt.registerTask('run', ['concurrent']);
 	grunt.registerTask('default', ['concurrent']);
 

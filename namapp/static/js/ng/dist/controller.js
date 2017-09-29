@@ -1,4 +1,4 @@
-/*! nam-web - v0.0.0 - 2017-02-21 */
+/*! nam-web - v0.0.0 - 2017-09-29 */
 
 namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", function ($scope, $log, $timeout, $http, $sce) {
     $scope.trustAsHtml = function(string) {
@@ -79,8 +79,8 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
       },
       {
         title: "A Crowdsourced Alternative to Eye-tracking for Visualization Understanding",
-        link: "http://namwkim.org/files/CHI2015-WIP-Bubble.pdf",
-        slides:"http://namwkim.org/files/CHI2015-WIP-Bubble-Poster.pdf",
+        link: "https://vcg.seas.harvard.edu/publications/a-crowdsourced-alternative-to-eye-tracking-for-visualization-understanding/paper",
+        slides:"https://vcg.seas.harvard.edu/publications/a-crowdsourced-alternative-to-eye-tracking-for-visualization-understanding/poster",
         bibtex: "http://vcg.seas.harvard.edu/publications/export/bibtex/371751",
         authors: "Kim, N.W., Bylinskii, Z., Borkin, M., Oliva, A., Gajos, K.Z., & Pfister, H.",
         site:"https://namwkim.github.io/bubbleview/",
@@ -90,9 +90,10 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
     $scope.techReports = [
       {
         title: "BubbleView: an alternative to eye-tracking for crowdsourcing image importance",
-        link: "https://arxiv.org/pdf/1702.05150",
+        link: "https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/paper",
         site:"https://namwkim.github.io/bubbleview/",
-        bibtex:"https://namwkim.github.io/bubbleview/",
+        bibtex:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance.bib",
+        supplement:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/supplementary-material",
         authors: "Kim, N.W.<sup>*</sup>, Bylinskii, Z.<sup>*</sup>, Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
         source: "arXiv preprint, 2017 (in submission to TOCHI)"
       }
