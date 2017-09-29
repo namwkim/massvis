@@ -1,8 +1,3 @@
-<<<<<<< HEAD:namapp/static/js/ng/dist/controller.js
-/*! nam-web - v0.0.0 - 2017-09-29 */
-=======
->>>>>>> 5c12b413b50edec35eb8ecd27120995cd95ecf90:namapp/static/js/ng/src/controller.js
-
 namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", function ($scope, $log, $timeout, $http, $sce) {
     $scope.trustAsHtml = function(string) {
         return $sce.trustAsHtml(string);
@@ -92,13 +87,8 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
       ]
     $scope.techReports = [
       {
-<<<<<<< HEAD:namapp/static/js/ng/dist/controller.js
         title: "BubbleView: an alternative to eye-tracking for crowdsourcing image importance",
         link: "https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/paper",
-=======
-        title: "BubbleView: an interface for crowdsourcing image importance maps and tracking visual attention",
-        link: "https://arxiv.org/pdf/1702.05150",
->>>>>>> 5c12b413b50edec35eb8ecd27120995cd95ecf90:namapp/static/js/ng/src/controller.js
         site:"https://namwkim.github.io/bubbleview/",
         bibtex:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance.bib",
         supplement:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/supplementary-material",
@@ -129,7 +119,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         name: "Nam Wook Kim",
         url: "http://namwkim.org",
         photo: "nam.png",
-        affiliation: "PhD Student, Harvard SEAS"
+        affiliation: "PhD Candidate, Harvard SEAS"
       },
       {
         name: "Aude Oliva",
