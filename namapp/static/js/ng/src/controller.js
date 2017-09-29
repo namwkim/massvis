@@ -46,6 +46,15 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
       ]
   	$scope.journalPapers = [
       {
+        title: "BubbleView: an interface for crowdsourcing image importance maps and tracking visual attention",
+        link: "https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/paper",
+        site:"https://namwkim.github.io/bubbleview/",
+        bibtex:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance.bib",
+        supplement:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/supplementary-material",
+        authors: "Kim, N.W.<sup>*</sup>, Bylinskii, Z.<sup>*</sup>, Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
+        source: "ACM Transactions on Computer-Human Interaction, 2017 (to appear)"
+      },
+      {
         title: "Beyond Memorability: Visualization Recognition and Recall",
         link: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-camera.pdf",
         supplement: "http://vcg.seas.harvard.edu/files/pfister/files/infovis_submission251-supplementalmaterial-camera.pdf",
@@ -86,15 +95,7 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
       }
       ]
     $scope.techReports = [
-      {
-        title: "BubbleView: an alternative to eye-tracking for crowdsourcing image importance",
-        link: "https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/paper",
-        site:"https://namwkim.github.io/bubbleview/",
-        bibtex:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance.bib",
-        supplement:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/supplementary-material",
-        authors: "Kim, N.W.<sup>*</sup>, Bylinskii, Z.<sup>*</sup>, Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
-        source: "arXiv preprint, 2017 (accepted to TOCHI)"
-      }
+
       ]
   	$scope.members = [
       {
