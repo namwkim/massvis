@@ -1,4 +1,7 @@
+<<<<<<< HEAD:namapp/static/js/ng/dist/controller.js
 /*! nam-web - v0.0.0 - 2017-09-29 */
+=======
+>>>>>>> 5c12b413b50edec35eb8ecd27120995cd95ecf90:namapp/static/js/ng/src/controller.js
 
 namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", function ($scope, $log, $timeout, $http, $sce) {
     $scope.trustAsHtml = function(string) {
@@ -89,13 +92,18 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
       ]
     $scope.techReports = [
       {
+<<<<<<< HEAD:namapp/static/js/ng/dist/controller.js
         title: "BubbleView: an alternative to eye-tracking for crowdsourcing image importance",
         link: "https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/paper",
+=======
+        title: "BubbleView: an interface for crowdsourcing image importance maps and tracking visual attention",
+        link: "https://arxiv.org/pdf/1702.05150",
+>>>>>>> 5c12b413b50edec35eb8ecd27120995cd95ecf90:namapp/static/js/ng/src/controller.js
         site:"https://namwkim.github.io/bubbleview/",
         bibtex:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance.bib",
         supplement:"https://vcg.seas.harvard.edu/publications/bubbleview-an-alternative-to-eye-tracking-for-crowdsourcing-image-importance/supplementary-material",
         authors: "Kim, N.W.<sup>*</sup>, Bylinskii, Z.<sup>*</sup>, Borkin, M., Gajos, K.Z., Oliva, A., Durand F., & Pfister, H.",
-        source: "arXiv preprint, 2017 (in submission to TOCHI)"
+        source: "arXiv preprint, 2017 (accepted to TOCHI)"
       }
       ]
   	$scope.members = [
@@ -212,8 +220,12 @@ namapp.controller('mainCtrl', ["$scope", "$log", "$timeout", "$http", "$sce", fu
         $scope.datasets.forEach(function(d){
           if ($("#"+d.name).prop('checked')){
             if (d.name=="all5k"){
-              requested.push("all5k(part1)");
-              requested.push("all5k(part2)");
+              requested.push("news");
+              requested.push("science");
+              requested.push("government");
+              requested.push("vis1");
+              requested.push("vis2");
+              requested.push("vis3");
             }else{
               requested.push(d.name);
             }
